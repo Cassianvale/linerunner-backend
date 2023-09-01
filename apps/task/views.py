@@ -1,14 +1,15 @@
-from django.shortcuts import render
+# -*-coding:utf-8 -*-
 
-# Create your views here.
+
+from django.shortcuts import render
 from .models import TestTask,CrontabTask
 from .serializers import TestTaskModelSerializer,CrontabTaskSerializer
 from rest_framework import viewsets
-from utils.pagination import MyPageNumberPagination
-from ..users.permission import MyPermission
-from ..users.authorizations import JWTAuthentication
+from utils.pagination import CustomPagination
+from ..user.permission import MyPermission
+from ..user.authentications import CustomJSONWebTokenAuthentication
 from rest_framework.views import APIView
-from lwjTest.settings import logger
+from linerunner.settings import logger
 from utils.apiResponse import ApiResponse
 from . import scheduler
 from rest_framework import status
@@ -23,9 +24,9 @@ class TestTaskViewsets(viewsets.ModelViewSet):
     """
     queryset = TestTask.objects.all()
     serializer_class = TestTaskModelSerializer
-    pagination_class = MyPageNumberPagination
+    pagination_class = CustomPagination
     permission_classes = [MyPermission]
-    authentication_classes = [JWTAuthentication]
+    authentication_classes = [CustomJSONWebTokenAuthentication]
 
     #筛选
     @action(methods=['get'],detail=False)
@@ -40,15 +41,15 @@ class CrontabTaskViewsets(viewsets.ModelViewSet):
     """
     queryset = CrontabTask.objects.all()
     serializer_class = CrontabTaskSerializer
-    pagination_class = MyPageNumberPagination
+    pagination_class = CustomPagination
     permission_classes = [MyPermission]
-    authentication_classes = [JWTAuthentication]
+    authentication_classes = [CustomJSONWebTokenAuthentication]
 
 class StartStopTaskView(APIView):
     """
     启用定时任务
     """
-    authentication_classes = [JWTAuthentication]
+    authentication_classes = [CustomJSONWebTokenAuthentication]
     permission_classes = [MyPermission]
 
     def post(self,request,task_id,target_status):

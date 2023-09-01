@@ -1,11 +1,12 @@
 # -*-coding:utf-8 -*-
 
-
 import os
 from rest_framework import serializers
 from ..xmfile.models import XmFileModel
 from utils.upload_oss import UploadOss
 from django.db import transaction
+
+
 class XmFileSerializer(serializers.ModelSerializer):
     """
     xmind文件

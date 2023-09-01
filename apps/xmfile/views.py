@@ -1,16 +1,20 @@
+# -*-coding:utf-8 -*-
+
 import os
 from django.shortcuts import render
 from utils.apiResponse import ApiResponse
 from utils.upload_oss import UploadOss
 from utils.modelViewSet import APIModelViewSet
 from rest_framework.views import APIView
-from linerunner.settings import *
+from linerunner.settings import UPLOAD_ROOT
 from apps.xmfile.models import XmFileModel
 from apps.xmfile.serializers import XmFileSerializer
 from utils.pagination import CustomPagination
 from ..user.authentications import CustomJSONWebTokenAuthentication
 from ..user.permission import MyPermission
 from django.http import FileResponse
+
+
 class UploadFile(APIView):
     def post(self, request):
         # 获取上传文件

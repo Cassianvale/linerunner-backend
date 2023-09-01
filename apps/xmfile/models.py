@@ -10,7 +10,7 @@ class XmFileModel(models.Model):
     project= models.ForeignKey(Project, on_delete=models.CASCADE, verbose_name='关联的项目', null=True)
     class Meta:
         ordering = ['-create_time']
-        db_table = "fusion_xm_file"
+        db_table = "linerunner_xm_file"
         verbose_name="xmind文件"
         verbose_name_plural=verbose_name
     def __str__(self):

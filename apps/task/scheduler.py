@@ -1,13 +1,15 @@
 # -*-coding:utf-8 -*-
 
 
-from apscheduler.schedulers.background import BackgroundScheduler
 from ..case.run_case import run_case,run_case_test,run_case_list
-from ..generateCase.run_case import run_case_task
+from apscheduler.schedulers.background import BackgroundScheduler
+# from ..generateCase.run_case import run_case_task
 import json
 import logging
 import os
 from datetime import datetime
+
+
 BASE_PATH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 log_path = os.path.join(BASE_PATH, '../log/scheduler_log.txt')
 logging.basicConfig(level=logging.INFO,

@@ -1,8 +1,7 @@
 # -*-coding:utf-8 -*-
 from rest_framework.exceptions import ValidationError
 from rest_framework.viewsets import ModelViewSet
-
-from .apiResponse import ApiResponse
+from utils.apiResponse import ApiResponse
 from rest_framework import status
 
 

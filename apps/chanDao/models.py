@@ -12,7 +12,7 @@ class ChanDaoProject(models.Model):
     product_person = models.CharField(max_length=20, verbose_name="产品负责人")
     test_person = models.CharField(max_length=20, verbose_name="测试负责人")
     class Meta:
-        db_table = "fusion_chandao_project"
+        db_table = "linerunner_chandao_project"
         verbose_name="阐道_项目名称"
         verbose_name_plural=verbose_name
         ordering = ['id']
@@ -26,7 +26,7 @@ class ChanDaoModular(models.Model):
     project = models.ForeignKey(ChanDaoProject,on_delete=models.CASCADE)
     modular = models.CharField(max_length=20,verbose_name="模块名称")
     class Meta:
-        db_table = "fusion_chandao_modular"
+        db_table = "linerunner_chandao_modular"
         verbose_name="阐道_项目模块"
         verbose_name_plural=verbose_name
     def __str__(self):
@@ -74,7 +74,7 @@ class ChanDaoCase(models.Model):
     found_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
 
     class Meta:
-        db_table = "fusion_chandao_case"
+        db_table = "linerunner_chandao_case"
         verbose_name="阐道_用例"
         verbose_name_plural=verbose_name
     def __str__(self):
@@ -98,7 +98,7 @@ class ChanDaoCaseStep(models.Model):
     remarks = models.CharField(max_length=3000,blank=True,null=True,verbose_name="备注")
 
     class Meta:
-        db_table = "fusion_chandao_step"
+        db_table = "linerunner_chandao_step"
         verbose_name="阐道_用例步骤"
         verbose_name_plural=verbose_name
     def __str__(self):

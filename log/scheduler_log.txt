@@ -1,0 +1,153 @@
+2023-08-30 13:26:16 base.py[line:181] INFO Scheduler started
+2023-08-30 13:26:24 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2023-08-30 13:26:24 base.py[line:44] WARNING view's ChanDaoProjectViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'django_demo.linerunner_chandao_project' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\views.py", line 47, in get_queryset
+    for project in project_all:
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'django_demo.linerunner_chandao_project' doesn't exist")
+2023-08-30 13:26:24 base.py[line:44] WARNING view's ChanDaoModularViewSet raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'django_demo.linerunner_chandao_modular' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\views.py", line 100, in get_queryset
+    for modular in modular_all:
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\query.py", line 398, in __iter__
+    self._fetch_all()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1560, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\mysql\base.py", line 75, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'django_demo.linerunner_chandao_modular' doesn't exist")
+2023-08-30 14:35:58 log.py[line:241] WARNING Unauthorized: /users/
+2023-08-30 14:37:11 log.py[line:241] WARNING Unauthorized: /users/
+2023-08-30 14:37:27 log.py[line:241] WARNING Unauthorized: /users/
+2023-08-30 14:37:52 log.py[line:241] WARNING Not Found: /accounts/login/
+2023-08-30 15:07:40 log.py[line:241] WARNING Not Found: /CLodopfuncs.js
+2023-08-30 15:13:36 log.py[line:241] WARNING Not Found: /CLodopfuncs.js
+2023-08-30 16:07:35 log.py[line:241] WARNING Not Found: /CLodopfuncs.js

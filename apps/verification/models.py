@@ -9,7 +9,7 @@ from django.db import models
 #     type = models.CharField(max_length=2,choices=TYPE,verbose_name="验证码类型")
 #     code = models.CharField(max_length=6,verbose_name="验证码")
 #     class Meta:
-#         db_table="fusion_sms"
+#         db_table="linerunner_sms"
 #         verbose_name="验证码"
 #         verbose_name_plural = verbose_name
 #     def __str__(self):

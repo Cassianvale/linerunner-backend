@@ -18,7 +18,7 @@ class TestTask(models.Model):
     end_time = models.CharField(max_length=50,null=True,blank=True,verbose_name="测试结束时间")
     publish_time = models.CharField(max_length=200,null=True,blank=True,verbose_name="发版时间")
     class Meta:
-        db_table = "fusion_test_task"
+        db_table = "linerunner_test_task"
         verbose_name = "测试任务表"
         verbose_name_plural = verbose_name
     def __str__(self):
@@ -52,7 +52,7 @@ class CrontabTask(models.Model):
     status = models.SmallIntegerField(choices=CRONTAB_TASK_STATUS,verbose_name='任务的状态',default=2)
 
     class Meta:
-        db_table = "fusion_crontab_task"
+        db_table = "linerunner_crontab_task"
         verbose_name = "定时任务"
         verbose_name_plural = verbose_name
 

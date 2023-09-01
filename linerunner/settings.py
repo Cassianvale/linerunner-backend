@@ -61,6 +61,9 @@ INSTALLED_APPS = [
     'apps.apiTest', # API
     'apps.case', # 用例
     'apps.report', # report
+    'apps.chanDao',
+    'apps.task',
+    'apps.xmfile',
 ]
 
 MIDDLEWARE = [
@@ -186,6 +189,8 @@ SIMPLE_JWT = {
     # 默认Token前缀
     "AUTH_HEADER_TYPES": ("Bearer",),
 }
+
+UPLOAD_ROOT="file"
 
 #钉钉配置
 DINGDING_URL='https://oapi.dingtalk.com/robot/send?access_token=263f0e9b4932e910e7f55ebbae62a07a34a4f84adc8421f11b7b20f50eecb3e4'

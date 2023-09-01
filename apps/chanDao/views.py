@@ -4,15 +4,15 @@ import os
 from utils.excel import DataDumpView
 from .models import ChanDaoCase,ChanDaoProject,ChanDaoModular,ChanDaoCaseStep
 from .serializers import ChanDaoCaseSerializer,ChanDaoProjectSerializer,ChanDaoModularSerializer,ChanDaoCaseStepSerializer
-from ..users.authorizations import JWTAuthentication
-from ..users.permission import MyPermission
-from ..users.models import Users
-from utils.pagination import MyPageNumberPagination
+from ..user.authentications import CustomJSONWebTokenAuthentication
+from ..user.permission import MyPermission
+from ..user.models import User
+from utils.pagination import CustomPagination
 from utils.apiResponse import ApiResponse
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.viewsets import ModelViewSet
-from lwjTest.settings import logger
+from linerunner.settings import logger
 from django.db import transaction
 from utils.primordial_sql import my_custom_sql
 from rest_framework import status
@@ -34,8 +34,8 @@ class ChanDaoProjectViewSet(ModelViewSet):
     """
     queryset = ChanDaoProject.objects.all()
     serializer_class = ChanDaoProjectSerializer
-    pagination_class = MyPageNumberPagination
-    authentication_classes = [JWTAuthentication]
+    pagination_class = CustomPagination
+    authentication_classes = [CustomJSONWebTokenAuthentication]
     permission_classes = [MyPermission]
     def get_queryset(self):
         """
@@ -67,8 +67,8 @@ class ChanDaoModularViewSet(ModelViewSet):
     """
     queryset = ChanDaoModular.objects.all()
     serializer_class = ChanDaoModularSerializer
-    pagination_class = MyPageNumberPagination
-    authentication_classes = [JWTAuthentication]
+    pagination_class = CustomPagination
+    authentication_classes = [CustomJSONWebTokenAuthentication]
     permission_classes = [MyPermission]
     def project_modular(self,request,project_id=None):
         """
@@ -85,7 +85,7 @@ class ChanDaoModularViewSet(ModelViewSet):
             modular.case_pass_count = ChanDaoCase.objects.filter(modular_id=modular.id,result='pass').count()
             modular.case_fail_count = ChanDaoCase.objects.filter(modular_id=modular.id,result='fail').count()
             modular.case_block_count = ChanDaoCase.objects.filter(modular_id=modular.id,result='block').count()
-        pg = MyPageNumberPagination()
+        pg = CustomPagination()
         page_modular = pg.paginate_queryset(queryset=modular_all, request=request, view=self)
         ser = ChanDaoModularSerializer(instance=page_modular,many=True).data
         return pg.get_paginated_response(ser)
@@ -124,8 +124,8 @@ class ChanDaoCaseViewSet(ModelViewSet):
     """
     queryset = ChanDaoCase.objects.all()
     serializer_class = ChanDaoCaseSerializer
-    pagination_class = MyPageNumberPagination
-    authentication_classes = [JWTAuthentication]
+    pagination_class = CustomPagination
+    authentication_classes = [CustomJSONWebTokenAuthentication]
     permission_classes = [MyPermission]
 
     def modular_case(self,request,modular_id=None):
@@ -136,7 +136,7 @@ class ChanDaoCaseViewSet(ModelViewSet):
         :return:
         """
         case_list = ChanDaoCase.objects.filter(modular_id=modular_id)
-        pg = MyPageNumberPagination()
+        pg = CustomPagination()
         page_case = pg.paginate_queryset(queryset=case_list, request=request, view=self)
         ser = ChanDaoCaseSerializer(instance=page_case,many=True).data
         return pg.get_paginated_response(ser)
@@ -145,7 +145,7 @@ class CaseResult(APIView):
     """
     用例的步骤
     """
-    authentication_classes = [JWTAuthentication]
+    authentication_classes = [CustomJSONWebTokenAuthentication]
     permission_classes = [MyPermission]
     def get(self, request, case_id=None):
         """
@@ -196,7 +196,7 @@ class DataCountView(APIView):
     """
     数据统计
     """
-    authentication_classes = [JWTAuthentication]
+    authentication_classes = [CustomJSONWebTokenAuthentication]
     permission_classes = [MyPermission]
     def get(self, request):
         #总的项目
@@ -210,9 +210,9 @@ class DataCountView(APIView):
                 "c.project," \
                 "count(e.id) as count_id " \
             "FROM	" \
-                "fusion_chandao_project c	" \
-                "LEFT JOIN fusion_chandao_modular d ON c.id = d.project_id 	" \
-                "LEFT JOIN fusion_chandao_case e ON d.id = e.modular_id  " \
+                "linerunner_chandao_project c	" \
+                "LEFT JOIN linerunner_chandao_modular d ON c.id = d.project_id 	" \
+                "LEFT JOIN linerunner_chandao_case e ON d.id = e.modular_id  " \
             "GROUP BY c.project"
         sql_result = my_custom_sql(sql)
         #项目的用例统计
