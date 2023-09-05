@@ -151,3 +151,15 @@ django.db.utils.ProgrammingError: (1146, "Table 'django_demo.linerunner_chandao_
 2023-08-30 15:07:40 log.py[line:241] WARNING Not Found: /CLodopfuncs.js
 2023-08-30 15:13:36 log.py[line:241] WARNING Not Found: /CLodopfuncs.js
 2023-08-30 16:07:35 log.py[line:241] WARNING Not Found: /CLodopfuncs.js
+2023-09-05 17:30:55 base.py[line:181] INFO Scheduler started
+2023-09-05 17:40:12 base.py[line:181] INFO Scheduler started
+2023-09-05 17:40:17 log.py[line:241] WARNING Not Found: /api/users/login
+2023-09-05 17:40:23 log.py[line:241] WARNING Not Found: /api/users/login
+2023-09-05 17:41:20 log.py[line:241] WARNING Unauthorized: /users/info
+2023-09-05 17:41:25 log.py[line:241] WARNING Unauthorized: /users/info
+2023-09-05 17:41:30 log.py[line:241] WARNING Unauthorized: /users/info
+2023-09-05 17:41:42 log.py[line:241] WARNING Unauthorized: /users/info
+2023-09-05 17:42:05 log.py[line:241] WARNING Unauthorized: /users/info
+2023-09-05 17:42:37 log.py[line:241] WARNING Unauthorized: /users/info
+2023-09-05 17:43:35 log.py[line:241] WARNING Unauthorized: /users/info
+2023-09-05 17:52:26 log.py[line:241] WARNING Unauthorized: /users/info
