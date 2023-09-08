@@ -24,12 +24,15 @@ class User(AbstractUser):
 
     class Meta:
         db_table = "user"
-
+        verbose_name = "用户"
+        verbose_name_plural=verbose_name
 
 class Role(BaseTable):
     # 角色表   继承BaseTable
     class Meta:
         db_table = "role"
+        verbose_name = "角色"
+        verbose_name_plural=verbose_name
 
     name = models.CharField("角色名", max_length=64, null=False, default="")
     # 可访问的菜单权限
