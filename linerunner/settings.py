@@ -171,7 +171,7 @@ REST_FRAMEWORK = {
 }
 
 # 自动添加自增长主
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # 修改Django用户认证后端类，为了实现多账号登录
 # AUTHENTICATION_BACKENDS = ['apps.user.utils.UsernameMobileAuthBackend']

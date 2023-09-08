@@ -38,6 +38,7 @@ class UserCreateSerializer(serializers.ModelSerializer):
 
 class UserPagingSerializer(serializers.ModelSerializer):
     id = serializers.CharField()
+    # 只读字段
     roleNames = serializers.SerializerMethodField()
 
     class Meta:

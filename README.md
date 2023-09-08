@@ -18,13 +18,13 @@
 2.安装依赖(国内镜像源加速)  
 `pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/`  
 3.生成迁移脚本  
-`python manage.py makemigrations`  
-4.迁移数据库   
-`python manage.py migrate`  
-5.创建超级用户  
-`python manage.py createsuperuser`  
-6.初始化用户数据  
+`python manage.py makemigrations user`  
+4.初始化用户数据  
 `python manage.py loaddata user`  
+5.迁移数据库   
+`python manage.py migrate`  
+6.创建超级用户  
+`python manage.py createsuperuser`  
 7.运行  
 `python manage.py runserver`  
 
