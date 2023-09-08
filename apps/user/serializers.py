@@ -50,9 +50,6 @@ class UserPagingSerializer(serializers.ModelSerializer):
         query_set = [Role.objects.get(id=role_id) for role_id in role_ids]
         return [{"id": obj.id, "name": obj.name} for obj in query_set]
 
-# class RoleAuthSerializer(serializers.ModelSerializer):
-
-#     fields = ['user_id', 'role_id']
 
 class RoleAuthSerializer(serializers.ModelSerializer):
     class Meta:

@@ -58,12 +58,12 @@ INSTALLED_APPS = [
     'corsheaders',  # 跨域
     'drf_yasg', # 生成接口文档
     'apps.user',    # 用户
-    'apps.apiTest', # API
-    'apps.case', # 用例
-    'apps.report', # report
-    'apps.chanDao',
-    'apps.task',
-    'apps.xmfile',
+    # 'apps.apiTest', # API
+    # 'apps.case', # 用例
+    # 'apps.report', # report
+    # 'apps.chanDao',
+    # 'apps.task',
+    # 'apps.xmfile',
 ]
 
 MIDDLEWARE = [
@@ -156,7 +156,7 @@ STATIC_URL = 'static/'
 
 
 # ---------------- 用户认证鉴权配置开始 ---------------------
-#继承了AbstractBaseUser，需要引用自定义的模型
+ #继承了AbstractBaseUser，需要引用自定义的模型
 AUTH_USER_MODEL = 'user.User'
 
 REST_FRAMEWORK = {

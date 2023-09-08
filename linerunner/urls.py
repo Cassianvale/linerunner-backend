@@ -22,18 +22,18 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # user 用户
     path('users/', include('apps.user.urls')),
-    # apiTest
-    path('api/', include('apps.apiTest.urls')),
-    # case 用例
-    path('case/', include('apps.case.urls')),
-    # 阐道
-    path('chandao/', include('apps.chanDao.urls')),
-    # 报告
-    path('report/',include('apps.report.urls')),
-    # 任务
-    path('task/',include('apps.task.urls')),
-    # xmind
-    path('xm/', include('apps.xmfile.urls')),
+    # # apiTest
+    # path('api/', include('apps.apiTest.urls')),
+    # # case 用例
+    # path('case/', include('apps.case.urls')),
+    # # 阐道
+    # path('chandao/', include('apps.chanDao.urls')),
+    # # 报告
+    # path('report/',include('apps.report.urls')),
+    # # 任务
+    # path('task/',include('apps.task.urls')),
+    # # xmind
+    # path('xm/', include('apps.xmfile.urls')),
     # swag接口文档
     path('docs/', schema_view.with_ui("swagger", cache_timeout=0), name="schema-swagger"),
 ]
