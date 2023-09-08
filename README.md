@@ -11,23 +11,22 @@
 
 #### 后端部署 
 
-1.创建并启用python虚拟环境  
-`cd linerunner-backend`  
-`python -m venv .venv`  
-`source .venv/Scripts/activate`  
-2.安装依赖(国内镜像源加速)  
+1. 创建并启用python虚拟环境(以下仅为vscode虚拟环境配置)  
+* `cd linerunner-backend`  
+* `python -m venv .venv`  
+* `source .venv/Scripts/activate`  
+2. 安装依赖(国内镜像源加速)  
 `pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/`  
-3.生成迁移脚本  
-`python manage.py makemigrations user`  
-4.初始化用户数据  (admin  qa123456)
-`python manage.py loaddata user`  
-5.迁移数据库   
+3. 生成迁移脚本  
+***ps: apps目录下的migrations文件夹不要删，不然执行迁移时会检索不到应用***  
+`python manage.py makemigrations`  
+4. 迁移数据库   
 `python manage.py migrate`  
-6.创建超级用户  
-`python manage.py createsuperuser`  
-7.运行  
+5. 初始化用户数据  (超管 admin  qa123456)
+`python manage.py loaddata user`
+6. 运行  
 `python manage.py runserver`  
-8.暂无前端页面，可以进入`http://127.0.0.1:8000/admin/`查看功能
+7. 暂无前端页面，可以进入 http://127.0.0.1:8000/admin/  查看功能
 
 I.更新依赖文件  
 `pip freeze > ./requirements.txt`  

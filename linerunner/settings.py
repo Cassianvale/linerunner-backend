@@ -56,14 +56,14 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'django_filters',
     'corsheaders',  # 跨域
-    'drf_yasg', # 生成接口文档
+    'drf_yasg',  # 生成接口文档
     'apps.user',    # 用户
-    # 'apps.apiTest', # API
-    # 'apps.case', # 用例
-    # 'apps.report', # report
-    # 'apps.chanDao',
-    # 'apps.task',
-    # 'apps.xmfile',
+    'apps.apiTest',  # API
+    'apps.case',     # 用例
+    'apps.report',   # report
+    'apps.chanDao',
+    'apps.task',
+    'apps.xmfile',
 ]
 
 MIDDLEWARE = [
@@ -171,7 +171,7 @@ REST_FRAMEWORK = {
 }
 
 # 自动添加自增长主
-DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # 修改Django用户认证后端类，为了实现多账号登录
 # AUTHENTICATION_BACKENDS = ['apps.user.utils.UsernameMobileAuthBackend']

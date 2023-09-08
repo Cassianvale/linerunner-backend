@@ -153,3 +153,7 @@ cython_debug/
 
 
 .vscode/
+
+# 排除apps目录下除__init__.py以外的迁移文件
+apps/*/migrations/*
+!apps/*/migrations/__init__.py
