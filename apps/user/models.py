@@ -39,6 +39,6 @@ class UserRole(BaseTable):
     # 用户角色关系表   继承BaseTable
     class Meta:
         db_table = "user_role"
-        
+
     user_id = models.IntegerField("用户id", null=False, default=0)
     role_id = models.IntegerField("角色id", null=False, default=0)
