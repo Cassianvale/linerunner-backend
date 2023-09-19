@@ -58,12 +58,12 @@ INSTALLED_APPS = [
     'corsheaders',  # 跨域
     'drf_yasg', # 生成接口文档
     'apps.user',    # 用户
-    # 'apps.apiTest', # API
-    # 'apps.case', # 用例
-    # 'apps.report', # report
-    # 'apps.chanDao',
-    # 'apps.task',
-    # 'apps.xmfile',
+    'apps.apiTest', # API
+    'apps.case', # 用例
+    'apps.report', # report
+    'apps.chanDao',
+    'apps.task',
+    'apps.xmfile',
 ]
 
 MIDDLEWARE = [
