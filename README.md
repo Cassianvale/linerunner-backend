@@ -1,4 +1,4 @@
-# LineRunner-Backend
+# linerunner-backend
 
 ![Static Badge](https://img.shields.io/badge/PYTHON%20-3.8-blue)    ![Static Badge](https://img.shields.io/badge/MYSQL%20-5.7-orange)
 
