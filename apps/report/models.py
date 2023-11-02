@@ -30,7 +30,7 @@ class ReportModel(models.Model):
 
     class Meta:
         ordering = ['-create_time']
-        db_table = "linerunner_report"
+        db_table = "report"
         verbose_name = "报告表"
         verbose_name_plural = verbose_name
     def __str__(self):
@@ -42,7 +42,7 @@ class EmailModel(models.Model):
     status = models.BooleanField(default=True,verbose_name="是否禁用")
 
     class Meta:
-        db_table = "linerunner_email"
+        db_table = "email"
         verbose_name = "邮箱表"
         verbose_name_plural = verbose_name
 

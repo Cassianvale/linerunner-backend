@@ -12,4 +12,4 @@ RUN  pip install -r ./requirements.txt -i \
     https://mirrors.aliyun.com/pypi/simple \
     --default-timeout=3000
 
-CMD ["python", "./manage.py", "runserver", "0.0.0.0:80"]
+CMD ["python", "./manage.py", "runserver", "127.0.0.1:8000"]

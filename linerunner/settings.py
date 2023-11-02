@@ -58,15 +58,9 @@ INSTALLED_APPS = [
     'corsheaders',  # 跨域
     'drf_yasg',  # 生成接口文档
     'apps.user',    # 用户
-<<<<<<< HEAD
     'apps.apiTest', # API
     'apps.case', # 用例
     'apps.report', # report
-=======
-    'apps.apiTest',  # API
-    'apps.case',     # 用例
-    'apps.report',   # report
->>>>>>> 7cba9c85392f889fb6233bbff79c6dd9a4d9192b
     'apps.chanDao',
     'apps.task',
     'apps.xmfile',

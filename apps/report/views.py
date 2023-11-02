@@ -19,7 +19,9 @@ class ReportVIew(APIView):
     报告列表
     """
     def get(self,request,*args, **kwargs):
+        # 查询数据库中未被删除的报告对象
         # report_obj = ReportModel.objects.filter(is_delete=False)
+        # 对查询结果进行序列化
         # serailizer = ReportModelSerializer(report_obj,many=True)
         # return ApiResponse(results=serailizer.data)
         report_obj = ReportModel.objects.filter(is_delete=False)
@@ -81,11 +83,12 @@ def testMail():
                report[0].case_pass,
                report[0].case_fail,
                report[0].report_details)
-    # recipient_list=['xiao_whb@163.com','wuhongbin@liweijia.com']
+    # 收件人列表
     recipient_list = [e.email for e in EmailModel.objects.filter(status=True)]
     print(recipient_list)
     from_mail = EMAIL_HOST_USER
-    title = "linerunner_test接口测试报告"
+
+    title = "linerunner接口测试报告"
     msg = mail.EmailMessage(title, html, from_mail, recipient_list)
     msg.content_subtype = 'html'
     msg.encoding = 'utf-8'

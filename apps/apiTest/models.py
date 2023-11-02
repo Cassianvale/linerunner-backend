@@ -29,7 +29,7 @@ class Project(models.Model):
     found_time = models.DateTimeField(auto_now_add=datetime.datetime.now().replace(microsecond=0),verbose_name='创建时间')
     # user = models.ForeignKey(user, on_delete=models.SET_NULL, null=True, verbose_name='创建人')
     class Meta:
-        db_table = 'linerunner_project'
+        db_table = 'project'
         verbose_name = "项目表"
         verbose_name_plural = verbose_name
     def __str__(self):
@@ -46,7 +46,7 @@ class Host(models.Model):
     create_time = models.DateTimeField(auto_now=True, verbose_name='更新时间')
     found_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     class Meta:
-        db_table="linerunner_host"
+        db_table="host"
         verbose_name="host域名"
         verbose_name_plural = verbose_name
     def __str__(self):
@@ -88,7 +88,7 @@ class Api(models.Model):
     expect_content = models.CharField(null=True,max_length=200,verbose_name='期望返回的内容',blank=True)
     create_time = models.DateTimeField(auto_now=True, verbose_name='创建时间')
     class Meta:
-        db_table = "linerunner_api"
+        db_table = "api"
         verbose_name="接口信息"
         verbose_name_plural=verbose_name
     def __str__(self):
@@ -102,7 +102,7 @@ class ApiArgument(models.Model):
     name = models.CharField(max_length=100,null=True,verbose_name='参数名字')
     value = models.CharField(max_length=100,null=True,verbose_name='参数的值')
     class Meta:
-        db_table = "linerunner_api_argument"
+        db_table = "api_argument"
         verbose_name="api的参数"
         verbose_name_plural=verbose_name
     def __str__(self):
@@ -122,7 +122,7 @@ class ApiArgumentExtract(models.Model):
     origin = models.CharField(max_length=20,null=True,choices=ARGUMENT_ORIGIN_CHOICE,verbose_name='参数来源')
     format = models.CharField(max_length=100,null=True,verbose_name='参数获取的格式')
     class Meta:
-        db_table = "linerunner_api_argument_extract"
+        db_table = "api_argument_extract"
         verbose_name="用例API的参数提取"
         verbose_name_plural=verbose_name
     def __str__(self):
@@ -146,7 +146,7 @@ class RunApiRecord(models.Model):
     assert_result = models.CharField(max_length=10,null=True,verbose_name='断言结果')
     class Meta:
         ordering = ['-create_time']
-        db_table = "linerunner_run_api_record"
+        db_table = "run_api_record"
         verbose_name="api运行记录"
         verbose_name_plural=verbose_name
     def __str__(self):
@@ -160,7 +160,7 @@ class Parameterization(models.Model):
     update_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
     class Meta:
         ordering = ['create_time']
-        db_table = "linerunner_parameterization"
+        db_table = "parameterization"
         verbose_name="参数化表达式"
         verbose_name_plural=verbose_name
     def __str__(self):

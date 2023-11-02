@@ -6,14 +6,14 @@ users = get_user_model()
 
 class ChanDaoProject(models.Model):
     """
-    阐道-项目名称
+    禅道-项目名称
     """
     project = models.CharField(max_length=30,verbose_name="项目名称")
     product_person = models.CharField(max_length=20, verbose_name="产品负责人")
     test_person = models.CharField(max_length=20, verbose_name="测试负责人")
     class Meta:
-        db_table = "linerunner_chandao_project"
-        verbose_name="阐道_项目名称"
+        db_table = "chandao_project"
+        verbose_name="禅道_项目名称"
         verbose_name_plural=verbose_name
         ordering = ['id']
     def __str__(self):
@@ -21,20 +21,20 @@ class ChanDaoProject(models.Model):
 
 class ChanDaoModular(models.Model):
     """
-    阐道-模块
+    禅道-模块
     """
     project = models.ForeignKey(ChanDaoProject,on_delete=models.CASCADE)
     modular = models.CharField(max_length=20,verbose_name="模块名称")
     class Meta:
-        db_table = "linerunner_chandao_modular"
-        verbose_name="阐道_项目模块"
+        db_table = "chandao_modular"
+        verbose_name="禅道_项目模块"
         verbose_name_plural=verbose_name
     def __str__(self):
         return "{}".format(self.modular)
 
 class ChanDaoCase(models.Model):
     """
-    阐道-用例
+    禅道-用例
     """
     CASE_TYPE = [
         ['功能测试', '功能测试'],
@@ -74,8 +74,8 @@ class ChanDaoCase(models.Model):
     found_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
 
     class Meta:
-        db_table = "linerunner_chandao_case"
-        verbose_name="阐道_用例"
+        db_table = "chandao_case"
+        verbose_name="禅道_用例"
         verbose_name_plural=verbose_name
     def __str__(self):
         return "{}".format(self.title)
@@ -98,8 +98,8 @@ class ChanDaoCaseStep(models.Model):
     remarks = models.CharField(max_length=3000,blank=True,null=True,verbose_name="备注")
 
     class Meta:
-        db_table = "linerunner_chandao_step"
-        verbose_name="阐道_用例步骤"
+        db_table = "chandao_step"
+        verbose_name="禅道_用例步骤"
         verbose_name_plural=verbose_name
     def __str__(self):
         return "{}".format(self.case)

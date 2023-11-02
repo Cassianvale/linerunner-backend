@@ -128,3 +128,87 @@ django.db.utils.ProgrammingError: (1146, "Table 'django_api.django_session' does
 2023-09-09 03:41:23 base.py[line:181] INFO Scheduler started
 2023-09-09 03:44:47 base.py[line:181] INFO Scheduler started
 2023-09-09 03:44:53 base.py[line:181] INFO Scheduler started
+2023-09-22 15:29:14 base.py[line:181] INFO Scheduler started
+2023-09-22 15:29:57 base.py[line:181] INFO Scheduler started
+2023-09-22 15:30:02 base.py[line:181] INFO Scheduler started
+2023-09-22 15:30:11 base.py[line:181] INFO Scheduler started
+2023-09-22 15:30:16 base.py[line:181] INFO Scheduler started
+2023-09-22 15:37:21 log.py[line:224] WARNING Not Found: /table
+2023-09-22 15:37:23 log.py[line:224] WARNING Not Found: /table
+2023-09-22 15:37:35 log.py[line:224] WARNING Not Found: /table
+2023-09-22 15:37:55 log.py[line:224] WARNING Not Found: /table
+2023-09-22 15:37:58 log.py[line:224] WARNING Not Found: /table
+2023-09-22 15:37:59 log.py[line:224] WARNING Not Found: /table
+2023-09-22 15:37:59 log.py[line:224] WARNING Not Found: /table
+2023-09-22 15:39:58 log.py[line:224] WARNING Not Found: /table
+2023-09-22 15:40:05 log.py[line:224] WARNING Not Found: /table
+2023-09-22 15:41:51 log.py[line:224] WARNING Not Found: /table
+2023-09-22 15:47:40 log.py[line:224] WARNING Not Found: /table
+2023-11-02 13:03:29 base.py[line:181] INFO Scheduler started
+2023-11-02 13:03:41 log.py[line:224] WARNING Not Found: /
+2023-11-02 13:03:41 log.py[line:224] WARNING Not Found: /favicon.ico
+2023-11-02 13:13:22 base.py[line:181] INFO Scheduler started
+2023-11-02 13:15:25 base.py[line:181] INFO Scheduler started
+2023-11-02 13:28:23 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\user\models.py changed, reloading.
+2023-11-02 13:28:25 base.py[line:181] INFO Scheduler started
+2023-11-02 13:28:34 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\user\models.py changed, reloading.
+2023-11-02 13:28:35 base.py[line:181] INFO Scheduler started
+2023-11-02 13:35:05 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\linerunner\settings.py changed, reloading.
+2023-11-02 13:35:07 base.py[line:181] INFO Scheduler started
+2023-11-02 13:35:09 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\user\apps.py changed, reloading.
+2023-11-02 13:35:11 base.py[line:181] INFO Scheduler started
+2023-11-02 15:19:30 log.py[line:224] WARNING Not Found: /CLodopfuncs.js
+2023-11-02 15:28:44 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\case\models.py changed, reloading.
+2023-11-02 15:28:45 base.py[line:181] INFO Scheduler started
+2023-11-02 15:29:26 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\apiTest\models.py changed, reloading.
+2023-11-02 15:29:28 base.py[line:181] INFO Scheduler started
+2023-11-02 15:29:51 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\models.py changed, reloading.
+2023-11-02 15:29:52 base.py[line:181] INFO Scheduler started
+2023-11-02 15:30:02 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\report\models.py changed, reloading.
+2023-11-02 15:30:04 base.py[line:181] INFO Scheduler started
+2023-11-02 15:30:06 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\report\models.py changed, reloading.
+2023-11-02 15:30:07 base.py[line:181] INFO Scheduler started
+2023-11-02 15:30:20 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\task\models.py changed, reloading.
+2023-11-02 15:30:22 base.py[line:181] INFO Scheduler started
+2023-11-02 15:30:52 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\user\models.py changed, reloading.
+2023-11-02 15:30:54 base.py[line:181] INFO Scheduler started
+2023-11-02 15:31:02 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\user\models.py changed, reloading.
+2023-11-02 15:31:03 base.py[line:181] INFO Scheduler started
+2023-11-02 15:31:10 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\user\models.py changed, reloading.
+2023-11-02 15:31:12 base.py[line:181] INFO Scheduler started
+2023-11-02 15:31:24 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\user\models.py changed, reloading.
+2023-11-02 15:31:25 base.py[line:181] INFO Scheduler started
+2023-11-02 15:31:44 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\xmfile\models.py changed, reloading.
+2023-11-02 15:31:45 base.py[line:181] INFO Scheduler started
+2023-11-02 15:32:41 base.py[line:181] INFO Scheduler started
+2023-11-02 15:32:55 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\linerunner\settings.py changed, reloading.
+2023-11-02 15:32:57 base.py[line:181] INFO Scheduler started
+2023-11-02 15:32:57 base.py[line:181] INFO Scheduler started
+2023-11-02 15:33:25 base.py[line:181] INFO Scheduler started
+2023-11-02 15:33:34 base.py[line:181] INFO Scheduler started
+2023-11-02 15:33:49 base.py[line:181] INFO Scheduler started
+2023-11-02 15:34:11 base.py[line:181] INFO Scheduler started
+2023-11-02 15:38:26 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\linerunner\urls.py changed, reloading.
+2023-11-02 15:38:27 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\linerunner\urls.py changed, reloading.
+2023-11-02 15:38:27 base.py[line:181] INFO Scheduler started
+2023-11-02 15:38:28 base.py[line:181] INFO Scheduler started
+2023-11-02 15:38:54 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\admin.py changed, reloading.
+2023-11-02 15:38:54 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\admin.py changed, reloading.
+2023-11-02 15:38:55 base.py[line:181] INFO Scheduler started
+2023-11-02 15:38:56 base.py[line:181] INFO Scheduler started
+2023-11-02 15:39:03 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\models.py changed, reloading.
+2023-11-02 15:39:03 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\models.py changed, reloading.
+2023-11-02 15:39:04 base.py[line:181] INFO Scheduler started
+2023-11-02 15:39:05 base.py[line:181] INFO Scheduler started
+2023-11-02 15:39:24 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\serializers.py changed, reloading.
+2023-11-02 15:39:25 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\models.py changed, reloading.
+2023-11-02 15:39:25 base.py[line:181] INFO Scheduler started
+2023-11-02 15:39:26 base.py[line:181] INFO Scheduler started
+2023-11-02 15:54:25 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\report\views.py changed, reloading.
+2023-11-02 15:54:25 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\report\views.py changed, reloading.
+2023-11-02 15:54:26 base.py[line:181] INFO Scheduler started
+2023-11-02 15:54:27 base.py[line:181] INFO Scheduler started
+2023-11-02 15:59:26 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\report\urls.py changed, reloading.
+2023-11-02 15:59:26 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\report\urls.py changed, reloading.
+2023-11-02 15:59:28 base.py[line:181] INFO Scheduler started
+2023-11-02 15:59:28 base.py[line:181] INFO Scheduler started

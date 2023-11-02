@@ -23,10 +23,10 @@
 4. 迁移数据库   
 `python manage.py migrate`  
 5. 初始化用户数据  (超管 admin  qa123456)
-`python manage.py loaddata user`
+`python manage.py loaddata user`  
 6. 运行  
 `python manage.py runserver`  
-7. 暂无前端页面，可以进入 http://127.0.0.1:8000/admin/  查看功能
+7. 暂无前端页面，可以进入 http://127.0.0.1:8000/admin/  查看功能  
 
 I.更新依赖文件  
 `pip freeze > ./requirements.txt`  

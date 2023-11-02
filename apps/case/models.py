@@ -1,5 +1,8 @@
+# -*-coding:utf-8 -*-
+
 from django.db import models
 from ..apiTest.models import Api
+
 class Case(models.Model):
     """
     自动化测试用例
@@ -9,7 +12,7 @@ class Case(models.Model):
     description = models.CharField(max_length=1024, blank=True, null=True, verbose_name='描述')
     create_time = models.DateTimeField(auto_now=True, verbose_name='更新时间')
     class Meta:
-        db_table = "linerunner_case"
+        db_table = "case"
         verbose_name="自动化测试用例"
         verbose_name_plural=verbose_name
     def __str__(self):
@@ -29,7 +32,7 @@ class CaseApiList(models.Model):
 
     class Meta:
         managed = True
-        db_table = "linerunner_case_api_list"
+        db_table = "case_api_list"
         verbose_name="测试用例中的api"
         verbose_name_plural=verbose_name
 
@@ -41,7 +44,7 @@ class CaseRunRecord(models.Model):
     create_time = models.DateTimeField(auto_now=True,verbose_name='运行时间')
     class Meta:
         ordering = ['-create_time']
-        db_table = "linerunner_case_run_record"
+        db_table = "case_run_record"
         verbose_name="用例运行记录"
         verbose_name_plural=verbose_name
     def __str__(self):
@@ -71,7 +74,7 @@ class CaseApiRunRecord(models.Model):
     case_record = models.ForeignKey(CaseRunRecord, on_delete=models.CASCADE, verbose_name='关联的case_record',
                                     related_name='api_records')
     class Meta:
-        db_table = "linerunner_case_api_run_record"
+        db_table = "case_api_run_record"
         verbose_name="Case API运行记录"
         verbose_name_plural=verbose_name
     def __str__(self):

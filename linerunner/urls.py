@@ -26,7 +26,7 @@ urlpatterns = [
     path('api/', include('apps.apiTest.urls')),
     # case 用例
     path('case/', include('apps.case.urls')),
-    # 阐道
+    # 禅道
     path('chandao/', include('apps.chanDao.urls')),
     # 报告
     path('report/',include('apps.report.urls')),

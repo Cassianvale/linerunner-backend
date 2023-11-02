@@ -5,7 +5,7 @@ from rest_framework import serializers
 from .models import ChanDaoModular,ChanDaoCase,ChanDaoProject,ChanDaoCaseStep
 class ChanDaoProjectSerializer(serializers.ModelSerializer):
     """
-    阐道-项目名称
+    禅道-项目名称
     """
     modular_count = serializers.IntegerField(read_only=True,label="模块的用例数量")
     class Meta:
@@ -14,7 +14,7 @@ class ChanDaoProjectSerializer(serializers.ModelSerializer):
 
 class ChanDaoModularSerializer(serializers.ModelSerializer):
     """
-    阐道-项目模块
+    禅道-项目模块
     """
     case_count = serializers.IntegerField(read_only=True,label="总用例")
     case_unexecuted_count = serializers.IntegerField(read_only=True,label="未执行用例")
@@ -27,7 +27,7 @@ class ChanDaoModularSerializer(serializers.ModelSerializer):
 
 class ChanDaoCaseStepSerializer(serializers.ModelSerializer):
     """
-    阐道-用例步骤
+    禅道-用例步骤
     """
     class Meta:
         model = ChanDaoCaseStep
@@ -35,7 +35,7 @@ class ChanDaoCaseStepSerializer(serializers.ModelSerializer):
 
 class ChanDaoCaseSerializer(serializers.ModelSerializer):
     """
-    阐道-用例
+    禅道-用例
     """
     case = ChanDaoCaseStepSerializer(many=True)
     class Meta:

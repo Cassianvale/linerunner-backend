@@ -6,7 +6,7 @@ from . import views
 from rest_framework.routers import DefaultRouter
 
 rouer = DefaultRouter()
-#阐道---项目
+#禅道---项目
 rouer.register('project',views.ChanDaoProjectViewSet,basename='ChanDaoProject')
 rouer.register('modular',views.ChanDaoModularViewSet,basename='ChanDaoModular')
 rouer.register('case',views.ChanDaoCaseViewSet,basename='ChanDaoCase')

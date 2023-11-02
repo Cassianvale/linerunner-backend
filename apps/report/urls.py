@@ -1,6 +1,5 @@
 # -*-coding:utf-8 -*-
 
-
 from django.urls import path,include,re_path
 from . import views
 from rest_framework.routers import DefaultRouter
@@ -16,5 +15,4 @@ urlpatterns = [
     path('send/meail/<name>',views.mailReport),
     #报告详情
     path('<name>',views.reportDetails),
-
     ]+rouer.urls
