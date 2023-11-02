@@ -22,7 +22,6 @@ djangorestframework==3.14.0
 djangorestframework-simplejwt==5.2.2
 drf-yasg==1.21.7
 Faker==19.3.1
-googlemaps==4.10.0
 idna==3.4
 inflection==0.5.1
 Inflector==3.1.0
