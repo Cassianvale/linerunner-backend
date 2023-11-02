@@ -33,6 +33,6 @@ I.更新依赖文件
 II.异常情况清空数据库数据  
 `python manage.py flush`  
 
-![image1](https://github.com/MuCqq/linerunner-backend/blob/a741827834137346c1f3fdbdd5fb586fa6c0823b/public/2024043.png?raw=true)
+![image1](https://github.com/MuCqq/linerunner-backend/blob/a741827834137346c1f3fdbdd5fb586fa6c0823b/public/2024043.png?raw=true)  
 
-![image2](https://github.com/MuCqq/linerunner-backend/blob/a741827834137346c1f3fdbdd5fb586fa6c0823b/public/Diagram.png?raw=true)
+![image2](https://github.com/MuCqq/linerunner-backend/blob/c37f6db90fd603e5a89315eeddff4ed9ebde7420/public/Diagram.png?raw=true)  
