@@ -1,12 +1,14 @@
 import sys
 import os
+
 sys.path.append(os.path.dirname(sys.path[0]))
 import datetime
 import xlrd
 import json
 from rest_framework import status
-from .models import Project,Api,Host,ApiArgumentExtract,ApiArgument,RunApiRecord,Parameterization
-from .serializers import ProjectSerializer,HostSerializer,ApiSerializer,ApiArgumentExtractSerializer,ApiArgumentSerializer,RunApiRecordSerializer,ParameterizationSerializer
+from .models import Project, Api, Host, ApiArgumentExtract, ApiArgument, RunApiRecord, Parameterization
+from .serializers import ProjectSerializer, HostSerializer, ApiSerializer, ApiArgumentExtractSerializer, \
+    ApiArgumentSerializer, RunApiRecordSerializer, ParameterizationSerializer
 from .api_request import apiRequest
 from utils.apiResponse import ApiResponse
 from utils.pagination import CustomPagination
@@ -18,6 +20,7 @@ from django.contrib.auth import get_user_model
 from linerunner.settings import logger
 from ..case.models import Case
 from utils.dictor import dictor
+
 users = get_user_model()
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authentication import BaseAuthentication
@@ -30,6 +33,8 @@ from utils.modelViewSet import APIModelViewSet
 from django_filters.rest_framework import DjangoFilterBackend
 from .filters import ApiFilter
 from rest_framework.generics import GenericAPIView
+
+
 class DataCountView(APIView):
     """
     项目管理数据统计
@@ -37,13 +42,13 @@ class DataCountView(APIView):
     permission_classes = [MyPermission]
     authentication_classes = [CustomJSONWebTokenAuthentication]
 
-    def get(self,request):
-        #基础数据"总项目数，总域名，总接口数，总用例数"
+    def get(self, request):
+        # 基础数据"总项目数，总域名，总接口数，总用例数"
         project_count = Project.objects.count()
         host_count = Host.objects.count()
         api_count = Api.objects.count()
         case_count = Case.objects.count()
-        #总自动化用例近5天编写情况
+        # 总自动化用例近5天编写情况
         api_write_list = []
         case_write_list = []
         for day in range(5):
@@ -51,18 +56,19 @@ class DataCountView(APIView):
             otherStyleTime = threeDayAgo.strftime("%Y-%m-%d")
             # api近5日编写统计情况
             api_counts = Api.objects.filter(create_time__contains=otherStyleTime).count()
-            api_write_list.append({"time":otherStyleTime,"api_count":api_counts})
-            #case近5日编写统计情况
+            api_write_list.append({"time": otherStyleTime, "api_count": api_counts})
+            # case近5日编写统计情况
             case_counts = Case.objects.filter(create_time__contains=otherStyleTime).count()
-            case_write_list.append({"time":otherStyleTime,"case_count":case_counts})
-        count_all = {"project_count":project_count,
-                     "host_count":host_count,
-                     "api_count":api_count,
-                     "case_count":case_count,
-                     "api_write_list":api_write_list,
-                     "case_write_list":case_write_list
+            case_write_list.append({"time": otherStyleTime, "case_count": case_counts})
+        count_all = {"project_count": project_count,
+                     "host_count": host_count,
+                     "api_count": api_count,
+                     "case_count": case_count,
+                     "api_write_list": api_write_list,
+                     "case_write_list": case_write_list
                      }
         return ApiResponse(results=count_all)
+
 
 class ProjectViewsets(ModelViewSet):
     """
@@ -85,12 +91,14 @@ class ProjectViewsets(ModelViewSet):
     authentication_classes = [CustomJSONWebTokenAuthentication]
     permission_classes = [MyPermission]
 
-    #通过name模糊筛选
-    @action(methods=['get'],detail=False)
-    def query_name(self, request, *args,**kwargs):
-        project_name_type = Project.objects.filter(name__contains=self.request.query_params.get('name','')).filter(type__contains=self.request.query_params.get('type',''))
-        ser = ProjectSerializer(project_name_type,many=True)
+    # 通过name模糊筛选
+    @action(methods=['get'], detail=False)
+    def query_name(self, request, *args, **kwargs):
+        project_name_type = Project.objects.filter(name__contains=self.request.query_params.get('name', '')).filter(
+            type__contains=self.request.query_params.get('type', ''))
+        ser = ProjectSerializer(project_name_type, many=True)
         return ApiResponse(results=ser.data, status=status.HTTP_200_OK)
+
 
 class HostViewSets(ModelViewSet):
     """
@@ -112,12 +120,14 @@ class HostViewSets(ModelViewSet):
     pagination_class = CustomPagination
     permission_classes = [MyPermission]
     authentication_classes = [CustomJSONWebTokenAuthentication]
-    #通过name筛选
-    @action(methods=['get'],detail=False)
-    def query_name(self, request, *args,**kwargs):
+
+    # 通过name筛选
+    @action(methods=['get'], detail=False)
+    def query_name(self, request, *args, **kwargs):
         host_name = Host.objects.filter(name__contains=self.request.query_params.get("name"))
-        ser = HostSerializer(host_name,many=True)
+        ser = HostSerializer(host_name, many=True)
         return ApiResponse(results=ser.data)
+
 
 class ApiViewsets(APIModelViewSet):
     """
@@ -145,6 +155,7 @@ class ApiViewsets(APIModelViewSet):
     #     except Exception as e:
     #         return self.queryset.filter(path__contains=self.kwargs.get('path'))
 
+
 class RunApiRecordAPIView(APIView):
     """
     运行api
@@ -160,11 +171,11 @@ class RunApiRecordAPIView(APIView):
         for case_argument in case_arguments:
             global_arguments[case_argument.name] = case_argument.value
         logger.info("API{}的全局参数:{}".format(api, global_arguments))
-        api_res = apiRequest(api,global_arguments)
+        api_res = apiRequest(api, global_arguments)
         res = api_res[0]
         # 断言结果(断言状态和内容)
         # 断言状态码，如果状态码不一致，直接失败
-        logger.info("预期状态码:{},响应状态码:{}".format(res.status_code,api.expect_code))
+        logger.info("预期状态码:{},响应状态码:{}".format(res.status_code, api.expect_code))
         # if res.status_code == int(api.expect_code):
         #     #判断是否为空
         #     if len(api.expect_content)>1:
@@ -185,7 +196,7 @@ class RunApiRecordAPIView(APIView):
         # else:
         #     logger.info("状态码断言失败")
         #     assert_result = "fail"
-        remarks= []
+        remarks = []
         if res.status_code == int(api.expect_code):
             # 断言内容
             if api.expect_content:
@@ -200,8 +211,9 @@ class RunApiRecordAPIView(APIView):
                         else:
                             assert_result = "fail"
                             remarks.append(
-                                "断言内容不一致，响应数据提取内容:{},预期内容:{},实际内容:{}".format(assert_content, assert_value,
-                                                                             actual_value))
+                                "断言内容不一致，响应数据提取内容:{},预期内容:{},实际内容:{}".format(assert_content,
+                                                                                                    assert_value,
+                                                                                                    actual_value))
                             logger.error("断言内容不一致，预期内容:{},实际内容:{}".format(assert_value, actual_value))
                             break
             else:
@@ -210,9 +222,9 @@ class RunApiRecordAPIView(APIView):
         else:
             assert_result = "fail"
         logger.info("api结果:{}".format(assert_result))
-        #保存运行记录
+        # 保存运行记录
         record = RunApiRecord.objects.create(
-            name = api.name,
+            name=api.name,
             url=res.url,
             http_method=res.request.method,
             return_code=res.status_code,
@@ -224,6 +236,7 @@ class RunApiRecordAPIView(APIView):
         )
         serializer = RunApiRecordSerializer(record).data
         return ApiResponse(results=serializer)
+
 
 # class CaseImport(APIView):
 #     """
@@ -260,13 +273,12 @@ class ApiDumpView(DataDumpView):
     """导出订单详情"""
     model = Api
     fields = '__all__'
-    method_fields = {'api_argument': '全局参数','api_argument_extract':'参数提取'} # 获取这个值需要自己实现get__sign方法
-    exclude = [] # 导出时排除的字段
+    method_fields = {'api_argument': '全局参数', 'api_argument_extract': '参数提取'}  # 获取这个值需要自己实现get__sign方法
+    exclude = []  # 导出时排除的字段
     order_field = '-create_time'
     sheet_size = 500
     file_name = '测试用例'
     permission_classes = []
-
 
     def get_queryset(self, request):
         """从request中获取参数进行筛选"""
@@ -281,14 +293,14 @@ class ApiDumpView(DataDumpView):
         api_arguments = ApiArgument.objects.filter(api=obj)
         len_api_arguments = ApiArgument.objects.filter(api=obj).count()
         api_argument_result = []
-        #如果没有数据，excel显示空
+        # 如果没有数据，excel显示空
         if len_api_arguments == 0:
             return None
         else:
             for api_argument in range(len_api_arguments):
-                api_argument_result.append({"name":api_arguments[api_argument].name,"value":api_arguments[api_argument].value})
+                api_argument_result.append(
+                    {"name": api_arguments[api_argument].name, "value": api_arguments[api_argument].value})
         return str(api_argument_result)
-
 
     def get__api_argument_extract(self, obj):
         """
@@ -303,8 +315,11 @@ class ApiDumpView(DataDumpView):
             return None
         else:
             for api_argument_extract in range(len_api_argument_extracts):
-                api_argument_extract_result.append({"name":api_argument_extracts[api_argument_extract].name,"origin":api_argument_extracts[api_argument_extract].origin,"format":api_argument_extracts[api_argument_extract].format})
+                api_argument_extract_result.append({"name": api_argument_extracts[api_argument_extract].name,
+                                                    "origin": api_argument_extracts[api_argument_extract].origin,
+                                                    "format": api_argument_extracts[api_argument_extract].format})
         return str(api_argument_extract_result)
+
 
 class ParameterizationViewSet(ModelViewSet):
     """
@@ -313,5 +328,3 @@ class ParameterizationViewSet(ModelViewSet):
     queryset = Parameterization.objects.all()
     pagination_class = CustomPagination
     serializer_class = ParameterizationSerializer
-
-

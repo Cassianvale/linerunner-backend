@@ -28,6 +28,8 @@ urlpatterns = [
     path('case/', include('apps.case.urls')),
     # 禅道
     path('chandao/', include('apps.chanDao.urls')),
+    # 缺陷记录
+    path('bugtracker/', include('apps.bugtracker.urls')),
     # 报告
     path('report/',include('apps.report.urls')),
     # 任务

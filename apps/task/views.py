@@ -2,8 +2,8 @@
 
 
 from django.shortcuts import render
-from .models import TestTask,CrontabTask
-from .serializers import TestTaskModelSerializer,CrontabTaskSerializer
+from .models import TestTask, CrontabTask
+from .serializers import TestTaskModelSerializer, CrontabTaskSerializer
 from rest_framework import viewsets
 from utils.pagination import CustomPagination
 from ..user.permission import MyPermission
@@ -16,8 +16,9 @@ from rest_framework import status
 from django.db import transaction
 import xlrd
 
-
 from rest_framework.decorators import action
+
+
 class TestTaskViewsets(viewsets.ModelViewSet):
     """
     测试任务
@@ -28,12 +29,13 @@ class TestTaskViewsets(viewsets.ModelViewSet):
     permission_classes = [MyPermission]
     authentication_classes = [CustomJSONWebTokenAuthentication]
 
-    #筛选
-    @action(methods=['get'],detail=False)
-    def query_name(self, request, *args,**kwargs):
-        testTask_task_name = TestTask.objects.filter(task_name__contains=self.request.query_params.get('task_name',''))
-        ser = TestTaskModelSerializer(testTask_task_name,many=True)
+    # 筛选
+    @action(methods=['get'], detail=False)
+    def query_name(self, request, *args, **kwargs):
+        testTask_task_name = TestTask.objects.filter(task_name__contains=self.request.query_params.get('task_name', ''))
+        ser = TestTaskModelSerializer(testTask_task_name, many=True)
         return ApiResponse(results=ser.data)
+
 
 class CrontabTaskViewsets(viewsets.ModelViewSet):
     """
@@ -45,6 +47,7 @@ class CrontabTaskViewsets(viewsets.ModelViewSet):
     permission_classes = [MyPermission]
     authentication_classes = [CustomJSONWebTokenAuthentication]
 
+
 class StartStopTaskView(APIView):
     """
     启用定时任务
@@ -52,7 +55,7 @@ class StartStopTaskView(APIView):
     authentication_classes = [CustomJSONWebTokenAuthentication]
     permission_classes = [MyPermission]
 
-    def post(self,request,task_id,target_status):
+    def post(self, request, task_id, target_status):
         task = CrontabTask.objects.get(pk=task_id)
         logger.info("task:{}".format(task))
         # 如果是想要运行任务
@@ -63,7 +66,7 @@ class StartStopTaskView(APIView):
                                    results="状态异常")
             scheduler.add_task(task)
 
-            task.status = 1 # 更改当前任务的状态
+            task.status = 1  # 更改当前任务的状态
         elif target_status == 2:
             if task.status == 2:
                 # 任务已经停止，不需要重复停止
@@ -76,6 +79,3 @@ class StartStopTaskView(APIView):
                                results="状态异常")
         task.save()
         return ApiResponse(results=CrontabTaskSerializer(task).data)
-
-
-

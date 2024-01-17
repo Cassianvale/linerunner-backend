@@ -22,7 +22,6 @@ class CustomJSONWebTokenAuthentication(JWTAuthentication):
         user = self.get_user(validated_token)
         return user, validated_token
 
-
     def authenticate(self, request):
         header = self.get_header(request)
         if header is None:

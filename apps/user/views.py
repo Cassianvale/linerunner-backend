@@ -19,6 +19,7 @@ from ..user.serializers import CustomTokenObtainPairSerializer
 from ..user.serializers import UserPagingSerializer, UserCreateSerializer, UserRoleSerializer, RolePagingSerializer
 from ..user.utils import jwt_response_payload_handler
 
+
 class CustomTokenObtainPairView(TokenObtainPairView):
     # 刷新令牌和访问令牌
     def get_tokens_for_user(self):

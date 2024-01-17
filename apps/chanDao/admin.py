@@ -6,20 +6,22 @@ from .models import *
 @admin.register(ChanDaoProject)
 class ProjectAdmin(admin.ModelAdmin):
     """禅道-项目名称"""
-    list_display = ['project','product_person','test_person']
+    list_display = ['project', 'product_person', 'test_person']
+
 
 @admin.register(ChanDaoModular)
 class ProjectAdmin(admin.ModelAdmin):
     """禅道-模块"""
-    list_display = ['project','modular']
+    list_display = ['project', 'modular']
+
 
 @admin.register(ChanDaoCase)
 class ProjectAdmin(admin.ModelAdmin):
     """禅道-用例"""
-    list_display = ['modular','title','case_type','case_stage','result','found_time']
+    list_display = ['modular', 'title', 'case_type', 'case_stage', 'result', 'found_time']
+
 
 @admin.register(ChanDaoCaseStep)
 class ProjectAdmin(admin.ModelAdmin):
     """测试步骤"""
-    list_display = ['case','step','expect','case_result','remarks']
-
+    list_display = ['case', 'step', 'expect', 'case_result', 'remarks']

@@ -1,11 +1,11 @@
 # -*-coding:utf-8 -*-
-
+from django.conf.global_settings import EMAIL_HOST_USER
 from django.shortcuts import render
-from .models import ReportModel,EmailModel
+from .models import ReportModel, EmailModel
 from ..user.authentications import CustomJSONWebTokenAuthentication
 from ..user.permission import MyPermission
 from rest_framework.views import APIView
-from .serializers import ReportModelSerializer,EmailSerializer
+from .serializers import ReportModelSerializer, EmailSerializer
 from utils.apiResponse import ApiResponse
 from utils.pagination import CustomPagination
 from rest_framework.pagination import PageNumberPagination
@@ -14,11 +14,13 @@ from django.core import mail
 from linerunner.settings import *
 from utils.modelViewSet import APIModelViewSet
 
+
 class ReportVIew(APIView):
     """
     报告列表
     """
-    def get(self,request,*args, **kwargs):
+
+    def get(self, request, *args, **kwargs):
         # 查询数据库中未被删除的报告对象
         # report_obj = ReportModel.objects.filter(is_delete=False)
         # 对查询结果进行序列化
@@ -30,11 +32,12 @@ class ReportVIew(APIView):
         ser = ReportModelSerializer(instance=page_report, many=True).data
         return pg.get_paginated_response(ser)
 
-    def delete(self,request,id=None):
+    def delete(self, request, id=None):
         report_obj = ReportModel.objects.get(pk=id)
-        report_obj.is_delete=True
+        report_obj.is_delete = True
         report_obj.save()
         return ApiResponse(results="删除成功")
+
 
 class EmailViewSet(APIModelViewSet):
     """
@@ -44,14 +47,16 @@ class EmailViewSet(APIModelViewSet):
     pagination_class = CustomPagination
     serializer_class = EmailSerializer
 
-def reportDetails(request,name=None):
+
+def reportDetails(request, name=None):
     """
     报告详情
     :param request:
     :param name:
     :return:
     """
-    return render(request,"report/{}".format(name))
+    return render(request, "report/{}".format(name))
+
 
 def testMail():
     """
@@ -59,7 +64,7 @@ def testMail():
     :return:
     """
     report = ReportModel.objects.filter().order_by('-id')[:1]
-    html='''
+    html = '''
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -98,21 +103,21 @@ def testMail():
         return False
 
 
-def mailReport(request,name=None):
+def mailReport(request, name=None):
     """
     发送邮件
     :param request:
     :return:
     """
     report = ReportModel.objects.filter(project_name=name).first()
-    context={
-        "project_name":report.project_name,
-        "case_all":report.case_all,
-        "case_pass":report.case_pass,
-        "case_fail":report.case_fail,
-        "report_details":report.report_details,
+    context = {
+        "project_name": report.project_name,
+        "case_all": report.case_all,
+        "case_pass": report.case_pass,
+        "case_fail": report.case_fail,
+        "report_details": report.report_details,
     }
     if testMail():
-        return render(request,template_name="report.html",context=context)
+        return render(request, template_name="report.html", context=context)
     else:
-        return render(request,"error.html")
+        return render(request, template_name="error.html")

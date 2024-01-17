@@ -17,19 +17,18 @@ from loguru import logger
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-#logger日志配置
+# logger日志配置
 report_log_path = os.path.join(BASE_DIR, "log")
 today = time.strftime("%Y-%m-%d", time.localtime())
 logging_file = os.path.join(report_log_path, "{}.log".format(today))
 logger.add(
     logging_file,
-    #格式
+    # 格式
     format="{time:YYYY-MM-DD HH:mm:ss}|{level}|{message}",
-    #文件最大大小
+    # 文件最大大小
     rotation="500 MB",
     encoding="utf-8",
 )
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -41,7 +40,6 @@ SECRET_KEY = 'django-insecure-waepeuzo)pa^rvawo9@$k6*l8a5+bv7jt6l70!t=z%9**jkj85
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]  # 解决跨域
-
 
 # Application definition
 
@@ -57,13 +55,15 @@ INSTALLED_APPS = [
     'django_filters',
     'corsheaders',  # 跨域
     'drf_yasg',  # 生成接口文档
-    'apps.user',    # 用户
-    'apps.apiTest', # API
-    'apps.case', # 用例
-    'apps.report', # report
+    'apps.user',  # 用户
+    'apps.apiTest',  # API
+    'apps.case',  # 用例
+    'apps.report',  # report
     'apps.chanDao',
     'apps.task',
     'apps.xmfile',
+    'apps.bugtracker',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -98,14 +98,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'linerunner.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_api',  # 数据库名字
+        'NAME': 'linerunner_db',  # 数据库名字
         'HOST': '127.0.0.1',  # 数据库主机
         'PORT': 3306,  # 数据库端口
         'USER': 'root',  # 数据库用户名
@@ -113,6 +112,16 @@ DATABASES = {
     }
 }
 
+#  配置redis
+CHANNEL_LAYERS = {
+  "default": {
+    "BACKEND": "channels_redis.core.RedisChannelLayer",
+    "CONFIG": {
+      "hosts": [('127.0.0.1', 6379)],
+    },
+  },
+}
+ASGI_APPLICATION = 'linerunner.routing.application'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -132,7 +141,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -144,7 +152,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
@@ -154,15 +161,14 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 
-
 # ---------------- 用户认证鉴权配置开始 ---------------------
- #继承了AbstractBaseUser，需要引用自定义的模型
+# 继承了AbstractBaseUser，需要引用自定义的模型
 AUTH_USER_MODEL = 'user.User'
 
 REST_FRAMEWORK = {
     # JWT
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'apps.user.authentications.CustomJSONWebTokenAuthentication',    # 必须配置的认证类
+        'apps.user.authentications.CustomJSONWebTokenAuthentication',  # 必须配置的认证类
     ),
     # 自定义响应体和状态码
     'EXCEPTION_HANDLER': 'apps.user.utils.custom_exception_handler',
@@ -190,7 +196,7 @@ SIMPLE_JWT = {
     "AUTH_HEADER_TYPES": ("Bearer",),
 }
 
-UPLOAD_ROOT="file"
+UPLOAD_ROOT = "file"
 
-#钉钉配置
-DINGDING_URL='https://oapi.dingtalk.com/robot/send?access_token=263f0e9b4932e910e7f55ebbae62a07a34a4f84adc8421f11b7b20f50eecb3e4'
+# 钉钉配置
+DINGDING_URL = 'https://oapi.dingtalk.com/robot/send?access_token=263f0e9b4932e910e7f55ebbae62a07a34a4f84adc8421f11b7b20f50eecb3e4'

@@ -1,36 +1,42 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-users = get_user_model()
 
+users = get_user_model()
 
 
 class ChanDaoProject(models.Model):
     """
     禅道-项目名称
     """
-    project = models.CharField(max_length=30,verbose_name="项目名称")
+    project = models.CharField(max_length=30, verbose_name="项目名称")
     product_person = models.CharField(max_length=20, verbose_name="产品负责人")
     test_person = models.CharField(max_length=20, verbose_name="测试负责人")
+
     class Meta:
         db_table = "chandao_project"
-        verbose_name="禅道_项目名称"
-        verbose_name_plural=verbose_name
+        verbose_name = "禅道_项目名称"
+        verbose_name_plural = verbose_name
         ordering = ['id']
+
     def __str__(self):
         return "{}".format(self.project)
+
 
 class ChanDaoModular(models.Model):
     """
     禅道-模块
     """
-    project = models.ForeignKey(ChanDaoProject,on_delete=models.CASCADE)
-    modular = models.CharField(max_length=20,verbose_name="模块名称")
+    project = models.ForeignKey(ChanDaoProject, on_delete=models.CASCADE)
+    modular = models.CharField(max_length=20, verbose_name="模块名称")
+
     class Meta:
         db_table = "chandao_modular"
-        verbose_name="禅道_项目模块"
-        verbose_name_plural=verbose_name
+        verbose_name = "禅道_项目模块"
+        verbose_name_plural = verbose_name
+
     def __str__(self):
         return "{}".format(self.modular)
+
 
 class ChanDaoCase(models.Model):
     """
@@ -49,10 +55,10 @@ class ChanDaoCase(models.Model):
     ]
 
     CASE_PRIORITY = [
-        [1,1],
-        [2,2],
-        [3,3],
-        [4,4],
+        [1, 1],
+        [2, 2],
+        [3, 3],
+        [4, 4],
     ]
 
     RESULT = [
@@ -61,24 +67,26 @@ class ChanDaoCase(models.Model):
         ['fail', 'fail'],  # 失败
     ]
 
-    modular = models.ForeignKey(ChanDaoModular,on_delete=models.CASCADE,verbose_name="模块")
-    title = models.CharField(max_length=30,verbose_name="用例标题")
-    preconditions =  models.CharField(max_length=200,verbose_name="前置条件")
-    case_type = models.CharField(max_length=10,verbose_name="用例类型",choices=CASE_TYPE,default='功能测试')
-    case_stage = models.CharField(max_length=10,verbose_name="适用阶段",choices=CASE_STAGE,default='功能测试阶段')
-    case_priority = models.IntegerField(verbose_name="优先级",choices=CASE_PRIORITY)
-    remarks = models.CharField(max_length=3000,verbose_name="备注")
+    modular = models.ForeignKey(ChanDaoModular, on_delete=models.CASCADE, verbose_name="模块")
+    title = models.CharField(max_length=30, verbose_name="用例标题")
+    preconditions = models.CharField(max_length=200, verbose_name="前置条件")
+    case_type = models.CharField(max_length=10, verbose_name="用例类型", choices=CASE_TYPE, default='功能测试')
+    case_stage = models.CharField(max_length=10, verbose_name="适用阶段", choices=CASE_STAGE, default='功能测试阶段')
+    case_priority = models.IntegerField(verbose_name="优先级", choices=CASE_PRIORITY)
+    remarks = models.CharField(max_length=3000, verbose_name="备注")
     user = models.ForeignKey(users, on_delete=models.SET_NULL, null=True, verbose_name='创建人')
-    result = models.CharField(max_length=3000,verbose_name="用例结果",choices=RESULT,default='unexecuted')
+    result = models.CharField(max_length=3000, verbose_name="用例结果", choices=RESULT, default='unexecuted')
     create_time = models.DateTimeField(auto_now=True, verbose_name='更新时间')
     found_time = models.DateTimeField(auto_now_add=True, verbose_name='创建时间')
 
     class Meta:
         db_table = "chandao_case"
-        verbose_name="禅道_用例"
-        verbose_name_plural=verbose_name
+        verbose_name = "禅道_用例"
+        verbose_name_plural = verbose_name
+
     def __str__(self):
         return "{}".format(self.title)
+
 
 class ChanDaoCaseStep(models.Model):
     """
@@ -88,19 +96,19 @@ class ChanDaoCaseStep(models.Model):
         ['unexecuted', 'unexecuted'],  # 未执行
         ['pass', 'pass'],  # 通过
         ['fail', 'fail'],  # 失败
-        ['block','block'], #阻塞
+        ['block', 'block'],  # 阻塞
     ]
 
-    case = models.ForeignKey(ChanDaoCase,on_delete=models.CASCADE,null=True,related_name="case")
-    step = models.CharField(max_length=3000,verbose_name="步骤")
-    expect = models.CharField(max_length=3000,verbose_name="预期")
-    case_result = models.CharField(max_length=3000,verbose_name="用例结果",choices=RESULT,default='unexecuted')
-    remarks = models.CharField(max_length=3000,blank=True,null=True,verbose_name="备注")
+    case = models.ForeignKey(ChanDaoCase, on_delete=models.CASCADE, null=True, related_name="case")
+    step = models.CharField(max_length=3000, verbose_name="步骤")
+    expect = models.CharField(max_length=3000, verbose_name="预期")
+    case_result = models.CharField(max_length=3000, verbose_name="用例结果", choices=RESULT, default='unexecuted')
+    remarks = models.CharField(max_length=3000, blank=True, null=True, verbose_name="备注")
 
     class Meta:
         db_table = "chandao_step"
-        verbose_name="禅道_用例步骤"
-        verbose_name_plural=verbose_name
+        verbose_name = "禅道_用例步骤"
+        verbose_name_plural = verbose_name
+
     def __str__(self):
         return "{}".format(self.case)
-
