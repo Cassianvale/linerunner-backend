@@ -8,9 +8,11 @@ import datetime
 import hashlib
 import string
 from faker import Faker
-from decimal import Context,ROUND_HALF_UP
+from decimal import Context, ROUND_HALF_UP
 from ruamel import yaml
 from linerunner.settings import logger
+
+
 class DataFunction():
     fake = Faker(locale='zh_CN')
 
@@ -75,13 +77,13 @@ class DataFunction():
         times = today - datetime.timedelta(days=day)
         return str(times)
 
-    def timestamp(self,day):
+    def timestamp(self, day):
         """
         获取时间戳
         :param day: day<0：未来时间，day>0：过去时间
         """
-        dt=self.times(day)
-        timeArray = time.strptime(dt,"%Y-%m-%d %H:%M:%S")
+        dt = self.times(day)
+        timeArray = time.strptime(dt, "%Y-%m-%d %H:%M:%S")
         timestamp = int(time.mktime(timeArray))
         return str(timestamp)
 
@@ -99,23 +101,23 @@ class DataFunction():
         """
         return self.fake.email(*args, **kwargs)
 
-    def get_num(self,num):
+    def get_num(self, num):
         """
         处理精度丢失
         :param num:
         :return:
         """
         num = str(num)
-        if float(num)>=1:
+        if float(num) >= 1:
             a = "%.2f" % float(num)
-            c = Context(prec=(len(a)-1), rounding=ROUND_HALF_UP).create_decimal(num)
+            c = Context(prec=(len(a) - 1), rounding=ROUND_HALF_UP).create_decimal(num)
             return float(str(c))
-        if float(num)<1:
-            d = float(num)*100
-            if d-int(d)<0.5:
-                return float(int(d)/100)
+        if float(num) < 1:
+            d = float(num) * 100
+            if d - int(d) < 0.5:
+                return float(int(d) / 100)
             else:
-                i = (int(d)+1)/100
+                i = (int(d) + 1) / 100
                 return float(i)
 
     def card(self):
@@ -124,15 +126,15 @@ class DataFunction():
         """
         id_card = self.fake.ssn()
         id_birth = id_card[6:14]
-        year=id_birth[0:4]
-        moon=id_birth[4:6]
-        day=id_birth[6:]
-        #拼接生日
-        get_birth="{}-{}-{}".format(year,moon,day)
-        #获取性别
-        if int(id_birth)%2==0:
+        year = id_birth[0:4]
+        moon = id_birth[4:6]
+        day = id_birth[6:]
+        # 拼接生日
+        get_birth = "{}-{}-{}".format(year, moon, day)
+        # 获取性别
+        if int(id_birth) % 2 == 0:
             sex = "女"
-        else :
+        else:
             sex = "男"
         curpath = os.path.dirname(os.path.realpath(__file__))  # 获取文件当前路径
         yamlpath = os.path.join(curpath, "card.yaml")  # 获取yaml文件地址
@@ -142,7 +144,7 @@ class DataFunction():
         }
         with open(yamlpath, 'w', encoding='utf-8') as f:
             yaml.dump(data, f, Dumper=yaml.RoundTripDumper, allow_unicode=True)
-        logger.info("生成的身份证{}，生日{}，性别{}".format(id_card,id_birth,sex))
+        logger.info("生成的身份证{}，生日{}，性别{}".format(id_card, id_birth, sex))
         return id_card
 
     def get_card_birth(self):
@@ -167,15 +169,15 @@ class DataFunction():
         result_sex = result['sex']
         return result_sex
 
-    def autoincrement_id(self,num):
+    def autoincrement_id(self, num):
         """
         自增id
         """
-        if num==0:
+        if num == 0:
             with open("id.txt", 'r') as f:
                 get_id = f.read()
             with open("id.txt", 'w') as f:
-                write_id = int(get_id)+1
+                write_id = int(get_id) + 1
                 f.write(str(write_id))
                 logger.info("自增id:{}".format(write_id))
         else:
@@ -186,10 +188,9 @@ class DataFunction():
 
     def data_parameterization(self, funcs):
         """
-
-        :param funcs:
-        :return:
+        数据参数化，处理自定义函数
         """
+        original_data = None
         if funcs[0][0] == "md5":
             original_data = self.md5(funcs[0][1])
         elif funcs[0][0] == "str":
@@ -224,7 +225,6 @@ class DataFunction():
         elif funcs[0][0] == "id":
             original_data = self.autoincrement_id(int(funcs[0][1]))
         return original_data
-
 
 
 if __name__ == '__main__':

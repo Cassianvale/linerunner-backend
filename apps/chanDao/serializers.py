@@ -2,42 +2,51 @@
 
 
 from rest_framework import serializers
-from .models import ChanDaoModular,ChanDaoCase,ChanDaoProject,ChanDaoCaseStep
+from .models import ChanDaoModular, ChanDaoCase, ChanDaoProject, ChanDaoCaseStep
+
+
 class ChanDaoProjectSerializer(serializers.ModelSerializer):
     """
     禅道-项目名称
     """
-    modular_count = serializers.IntegerField(read_only=True,label="模块的用例数量")
+    modular_count = serializers.IntegerField(read_only=True, label="模块的用例数量")
+
     class Meta:
         model = ChanDaoProject
         fields = "__all__"
+
 
 class ChanDaoModularSerializer(serializers.ModelSerializer):
     """
     禅道-项目模块
     """
-    case_count = serializers.IntegerField(read_only=True,label="总用例")
-    case_unexecuted_count = serializers.IntegerField(read_only=True,label="未执行用例")
+    case_count = serializers.IntegerField(read_only=True, label="总用例")
+    case_unexecuted_count = serializers.IntegerField(read_only=True, label="未执行用例")
     case_pass_count = serializers.IntegerField(read_only=True, label="通过用例")
     case_fail_count = serializers.IntegerField(read_only=True, label="失败用例")
     case_block_count = serializers.IntegerField(read_only=True, label="阻塞用例")
+
     class Meta:
         model = ChanDaoModular
         fields = "__all__"
+
 
 class ChanDaoCaseStepSerializer(serializers.ModelSerializer):
     """
     禅道-用例步骤
     """
+
     class Meta:
         model = ChanDaoCaseStep
         fields = "__all__"
+
 
 class ChanDaoCaseSerializer(serializers.ModelSerializer):
     """
     禅道-用例
     """
     case = ChanDaoCaseStepSerializer(many=True)
+
     class Meta:
         model = ChanDaoCase
         fields = "__all__"
@@ -46,7 +55,7 @@ class ChanDaoCaseSerializer(serializers.ModelSerializer):
         case_setp_list = validated_data.pop("case")
         case = ChanDaoCase.objects.create(**validated_data)
         for case_setp in case_setp_list:
-            ChanDaoCaseStep.objects.create(case=case,**case_setp)
+            ChanDaoCaseStep.objects.create(case=case, **case_setp)
         return case
 
     def update(self, instance, validated_data):
@@ -64,7 +73,3 @@ class ChanDaoCaseSerializer(serializers.ModelSerializer):
         for case_step in case_step_list:
             ChanDaoCaseStep.objects.create(case=instance, **case_step)
         return instance
-
-
-
-

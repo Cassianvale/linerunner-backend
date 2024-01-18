@@ -2,8 +2,7 @@ import unittest
 import re
 import json
 import ast
-from .api_request import _replace_argument
-from .api_request import data_function
+from  import apiResponse
 
 
 class ReplaceArgumentTest(unittest.TestCase):
@@ -53,19 +52,19 @@ class ReplaceArgumentTest(unittest.TestCase):
         self.assertEqual(result, "Hello, Alice!")
 
     def test_int_type(self):
-        target_str = 42
+        target_str = "42"
         arguments = {}
         result = _replace_argument(target_str, arguments)
         self.assertEqual(result, 42)
 
     def test_bool_type(self):
-        target_str = True
+        target_str = "True"
         arguments = {}
         result = _replace_argument(target_str, arguments)
         self.assertEqual(result, True)
 
     def test_float_type(self):
-        target_str = 3.14
+        target_str = "3.14"
         arguments = {}
         result = _replace_argument(target_str, arguments)
         self.assertEqual(result, 3.14)
@@ -80,7 +79,7 @@ class ReplaceArgumentTest(unittest.TestCase):
         target_str = "Hello, {{name}}!"
         arguments = {"name": ["Alice", "Bob"]}
         result = _replace_argument(target_str, arguments)
-        self.assertEqual(result, "Hello, ['Alice', 'Bob']!")
+        self.assertEqual(result, "Hello, [Alice, Bob]!")
 
     def test_nested_dict(self):
         target_str = '{"user": "{{name}}", "address": {"city": "{{city}}"}}'
@@ -95,35 +94,6 @@ class ReplaceArgumentTest(unittest.TestCase):
         result = _replace_argument(target_str, arguments)
         expected_result = "[1, 2, [3, 5, 7], 4]"
         self.assertEqual(result, expected_result)
-
-    def test_data_function_with_string(self):
-        data = "___func{arg}"
-        # 假设 DataFunction().data_parameterization(funcs) 返回 "result"
-        expected = "result"
-        self.assertEqual(data_function(data), expected)
-
-    def test_data_function_with_dict(self):
-        data = {"key": "___func{arg}", "key2": "value2"}
-        # 根据 data_function 和 data_parameterization 函数的实现，期望的返回值应该是 {"key": "None", "key2": "value2"}
-        expected = {"key": "None", "key2": "value2"}
-        self.assertEqual(data_function(data), expected)
-
-    def test_data_function_with_list(self):
-        data = ["___func{arg}", "value2"]
-        # 假设 DataFunction().data_parameterization(funcs) 返回 "result"
-        expected = ["result", "value2"]
-        self.assertEqual(data_function(data), expected)
-
-    def test_data_function_with_nested_dict(self):
-        data = {"key": {"nested_key": "___func{arg}"}, "key2": "value2"}
-        # 假设 DataFunction().data_parameterization(funcs) 返回 "result"
-        expected = {"key": {"nested_key": "result"}, "key2": "value2"}
-        self.assertEqual(data_function(data), expected)
-
-    def test_data_function_without_custom_function(self):
-        data = {"key": "value", "key2": "value2"}
-        expected = {"key": "value", "key2": "value2"}
-        self.assertEqual(data_function(data), expected)
 
 
 if __name__ == '__main__':

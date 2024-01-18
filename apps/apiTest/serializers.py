@@ -7,36 +7,27 @@ from rest_framework import serializers
 from django.db import transaction
 from rest_framework import validators
 
-class HostSerializer(serializers.ModelSerializer):
-    """
-    host域名
-    """
-    project_id = serializers.IntegerField()
-    class Meta:
-        model = Host
-        fields = ['id','name','description','project_id','host']
-        extra_kwargs={
-            "name":{
-                'required': True
-            }
-        }
 
 class ApiArgumentSerializer(serializers.ModelSerializer):
     """
     api的全局参数
     """
+
     class Meta:
         model = ApiArgument
         # fields = "__all__"
-        fields = ['name','value']
+        fields = ['name', 'value']
+
 
 class ApiArgumentExtractSerializer(serializers.ModelSerializer):
     """
     用例API的响应参数提取
     """
+
     class Meta:
         model = ApiArgumentExtract
-        fields = ['name','origin','format']
+        fields = ['name', 'origin', 'format']
+
 
 class ApiSerializer(serializers.ModelSerializer):
     """
@@ -46,9 +37,8 @@ class ApiSerializer(serializers.ModelSerializer):
     host_id = serializers.IntegerField(write_only=True)
     arguments = ApiArgumentSerializer(many=True)
     argumentExtract = ApiArgumentExtractSerializer(many=True)
-    # arguments = ApiArgumentSerializer(read_only=True,many=True)
-    # argumentExtract = ApiArgumentExtractSerializer(read_only=True,many=True)
     project_name = serializers.SerializerMethodField()
+
     class Meta:
         model = Api
         fields = "__all__"
@@ -62,19 +52,20 @@ class ApiSerializer(serializers.ModelSerializer):
                 }
             }
         }
-    def get_project_name(self,obj):
+
+    def get_project_name(self, obj):
         return obj.project.name
 
     def create(self, validated_data):
         arguments_list = validated_data.pop('arguments')
         argumentExtract_list = validated_data.pop('argumentExtract')
         api = Api.objects.create(**validated_data)
-        #保存api的全局参数
+        # 保存api的全局参数
         for arguments in arguments_list:
-            ApiArgument.objects.create(api=api,**arguments)
-        #保存用例API的响应参数提取
+            ApiArgument.objects.create(api=api, **arguments)
+        # 保存用例API的响应参数提取
         for argumentExtract in argumentExtract_list:
-            ApiArgumentExtract.objects.create(api=api,**argumentExtract)
+            ApiArgumentExtract.objects.create(api=api, **argumentExtract)
         return api
 
     def update(self, instance, validated_data):
@@ -105,7 +96,6 @@ class ApiSerializer(serializers.ModelSerializer):
         except Exception as e:
             return e
 
-
     # 局部钩子
     # def validate_name(self, value):
     #     if Api.objects.filter(name=value):
@@ -114,39 +104,24 @@ class ApiSerializer(serializers.ModelSerializer):
 
 
 class RunApiRecordSerializer(serializers.ModelSerializer):
-
     """
     API运行记录
     """
     project_name = serializers.SerializerMethodField()
+
     class Meta:
         model = RunApiRecord
         fields = "__all__"
 
-    def get_project_name(self,obj):
+    def get_project_name(self, obj):
         return obj.api.project.name
 
-class ProjectSerializer(serializers.ModelSerializer):
-    """
-    项目表
-    """
-    name = serializers.CharField(max_length=50, label="项目名称", help_text='项目名称',
-                                 validators=[validators.UniqueValidator(queryset=Project.objects.all(), message="项目名称重复")])
-    class Meta:
-        model = Project
-        fields = ['id','name','type','description']
-        extra_kwargs={
-            "name":{
-                'required': True
-            }
-        }
 
 class ParameterizationSerializer(serializers.ModelSerializer):
     """
     参数化表达式
     """
+
     class Meta:
         model = Parameterization
         fields = "__all__"
-
-

@@ -1,101 +1,67 @@
 # -*-coding:utf-8 -*-
-
 import os
 import requests
-from urllib import parse
 import json
 import re
+from urllib.parse import urljoin
+# from ast import literal_eval
+import ast
+
 from linerunner.settings import logger
-from ast import literal_eval
 from utils.dingDing import DingDing
 import urllib3
+from utils.data_function import DataFunction
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-from utils.data_function import DataFunction
+
+# 正则表达式
+PATTERN = re.compile(r"{{(.+?)}}")
 
 
 def _replace_argument(target_str, arguments):
-    """
-    :param target_str: 原始数据
-    :param arguments: 需要替换的数据
-    :return:
-    """
-    if type(target_str) == str:
-        if not arguments:
-            return target_str
-        while True:
-            search_result = re.search(r"{{(.+?)}}", target_str)
-            if not search_result:
-                break
-            argument_name = search_result.group(1)
-            if argument_name in arguments:
-                target_str = re.sub("{{" + argument_name + "}}", str(arguments[argument_name]), target_str)
-            else:
-                target_str = re.sub("{{" + argument_name + "}}", argument_name, target_str)
+    if isinstance(target_str, (int, bool, float)) or not arguments:
         return target_str
-    elif type(target_str) == dict:
+
+    is_str = isinstance(target_str, str)
+    if not is_str:  # 如果目标不是字符串，将其转换为字符串
         target_str = json.dumps(target_str)
-        if not arguments:
-            return target_str
-        while True:
-            search_result = re.search(r"{{(.+?)}}", target_str)
-            if not search_result:
-                break
-            argument_name = search_result.group(1)
-            if argument_name in arguments:
-                target_str = re.sub("{{" + argument_name + "}}", arguments[argument_name], target_str)
-            else:
-                target_str = re.sub("{{" + argument_name + "}}", argument_name, target_str)
-        return json.loads(target_str)
-    elif type(target_str) == list:
-        target_str = str(target_str)
-        if not arguments:
-            return target_str
-        while True:
-            search_result = re.search(r"{{(.+?)}}", target_str)
-            if not search_result:
-                break
-            argument_name = search_result.group(1)
-            if argument_name in arguments:
-                target_str = re.sub("{{" + argument_name + "}}", arguments[argument_name], target_str)
-            else:
-                target_str = re.sub("{{" + argument_name + "}}", argument_name, target_str)
-        return literal_eval(target_str)
-    elif type(target_str) == int:
-        return target_str
-    elif type(target_str) == bool:
-        return target_str
-    elif type(target_str) == float:
-        return target_str
+
+    while True:
+        match = PATTERN.search(target_str)
+        if not match:
+            break
+        argument_name = match.group(1)
+        replace_value = str(arguments[argument_name]) if argument_name in arguments else argument_name
+        target_str = PATTERN.sub(replace_value, target_str, count=1)
+
+    return target_str if is_str else json.loads(target_str)  # 如果原始输入是字符串，返回字符串，否则返回字典/列表
+
+
+# 将正则表达式对象定义在函数外部，避免在每次调用函数时都重新编译
+FUNC_EXPR = re.compile(r'___(.*?){(.*?)}')
 
 
 def data_function(data):
-    for key, value in data.items():
-        # value使用了自定义函数
-        if type(value) == str and "___" in value:
-            FUNC_EXPR = '___(.*?){(.*?)}'
-            value_1 = value.split("___")[0]
-            value_2 = "___" + value.split("___")[1]
-            funcs = re.findall(FUNC_EXPR, value_2)
+    """接受一个字典作为输入，如果值是字符串并且包含 "___"，则被视为包含自定义函数的字符串"""
+    def process_value(value):
+        """处理单个值，如果值包含自定义函数，将其替换为处理后的结果"""
+        if isinstance(value, str) and "___" in value:
+            value_1, value_2 = value.split("___", 1)
+            value_2 = "___" + value_2
+            funcs = FUNC_EXPR.findall(value_2)
             value = DataFunction().data_parameterization(funcs)
-            value = str(value_1) + str(value)
-            data[key] = value
-        elif type(value) == dict:
-            data_value = {}
-            for k, v in value.items():
-                # value使用了自定义函数
-                if "___" in v:
-                    FUNC_EXPR = '___(.*?){(.*?)}'
-                    value_1 = v.split("___")[0]
-                    value_2 = "___" + v.split("___")[1]
-                    funcs = re.findall(FUNC_EXPR, value_2)
-                    value = DataFunction().data_parameterization(funcs)
-                    value3 = str(value_1) + str(value)
-                    data_value[k] = value3
-                else:
-                    data_value[k] = v
-            data[key] = data_value
-    return data
+            return str(value_1) + str(value)
+        return value
+
+    def recursive_process(data):
+        """递归处理字典或列表中的每一个值"""
+        if isinstance(data, dict):
+            return {k: recursive_process(process_value(v)) for k, v in data.items()}
+        elif isinstance(data, list):
+            return [recursive_process(process_value(v)) for v in data]
+        return data
+
+    return recursive_process(data)
 
 
 def data_argument(data, arguments):
@@ -132,14 +98,14 @@ def data_result_dict(data, arguments):
     return data_result
 
 
-def apiRequest(api, arguments=None, reset_data=None):
+def apiRequest(api, arguments=None):
     host = api.host.host
     method = api.http_method
     request_type = api.request_type
     path = api.path
-    url = parse.urljoin(host, path)
+    url = urljoin(host, path)
     url = _replace_argument(url, arguments)
-    logger.info("请求的url:{}".format(url))
+
     # 替换请求参数的变量
     data = dict()
 
@@ -174,21 +140,6 @@ def apiRequest(api, arguments=None, reset_data=None):
                     data_result = data_argument(data_list, arguments)
                 data = data_result
 
-                # for key,value in data_list.items():
-                #     # data[key] = _replace_argument(value,arguments)
-                #     #处理参数需要使用自定义方法
-                #     if type(value)==str and "___" in value:
-                #         FUNC_EXPR = '___(.*?){(.*?)}'
-                #         value_1 = value.split("___")[0]
-                #         value_2 = "___" + value.split("___")[1]
-                #         funcs = re.findall(FUNC_EXPR, value_2)
-                #         value = DataFunction().data_parameterization(funcs)
-                #         value = str(value_1) + str(value)
-                #     #处理参数变量
-                #     if "{{" not in api.data:
-                #         data[key] = value
-                #     else:
-                #         data[key] = _replace_argument(value,arguments)
     logger.info("请求参数:{}".format(data))
     headers = {}
     if api.headers:
@@ -196,18 +147,16 @@ def apiRequest(api, arguments=None, reset_data=None):
         for header_dict in header_list:
             for key, value in header_dict.items():
                 headers[key] = _replace_argument(value, arguments)
-    logger.info("请求头:{}".format(headers))
+
+    logger.info(f"请求的url: {url}, 请求参数: {data}, 请求头: {headers}")
     logger.info("==============发起请求====================")
-    if request_type == "json":
-        res = requests.request(method, url, headers=headers, json=data, verify=False, allow_redirects=False)
-        logger.info("response:{}".format(res.text))
-    elif request_type == "data":
-        res = requests.request(method, url, headers=headers, data=data, verify=False, allow_redirects=False)
-        logger.info("response:{}".format(res.text))
-    elif request_type == "params":
-        res = requests.request(method, url, headers=headers, params=data, verify=False, allow_redirects=False)
-        logger.info("response:{}".format(res.text))
+
+    res = requests.request(method, url, headers=headers, json=data if request_type == "json" else None,
+                           data=data if request_type in ["data", "params"] else None, verify=False,
+                           allow_redirects=False)
+    logger.info(f"response: {res.text}")
     logger.info("==============请求结束====================")
+
     # 接口响应时间
     runTime = res.elapsed.total_seconds()
     if runTime > 20:

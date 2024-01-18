@@ -212,3 +212,799 @@ django.db.utils.ProgrammingError: (1146, "Table 'django_api.django_session' does
 2023-11-02 15:59:26 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\report\urls.py changed, reloading.
 2023-11-02 15:59:28 base.py[line:181] INFO Scheduler started
 2023-11-02 15:59:28 base.py[line:181] INFO Scheduler started
+2024-01-16 15:07:04 base.py[line:181] INFO Scheduler started
+2024-01-16 15:08:53 base.py[line:181] INFO Scheduler started
+2024-01-16 15:10:09 base.py[line:181] INFO Scheduler started
+2024-01-16 15:10:25 base.py[line:181] INFO Scheduler started
+2024-01-16 15:10:34 base.py[line:181] INFO Scheduler started
+2024-01-16 15:10:43 base.py[line:181] INFO Scheduler started
+2024-01-16 15:10:53 log.py[line:224] WARNING Not Found: /favicon.ico
+2024-01-16 15:12:59 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-16 15:13:01 base.py[line:181] INFO Scheduler started
+2024-01-16 15:14:29 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\task\views.py changed, reloading.
+2024-01-16 15:14:32 base.py[line:181] INFO Scheduler started
+2024-01-16 15:20:23 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\task\models.py changed, reloading.
+2024-01-16 15:20:25 base.py[line:181] INFO Scheduler started
+2024-01-16 15:30:47 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\report\views.py changed, reloading.
+2024-01-16 15:30:49 base.py[line:181] INFO Scheduler started
+2024-01-16 15:39:19 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\task\models.py changed, reloading.
+2024-01-16 15:39:21 base.py[line:181] INFO Scheduler started
+2024-01-16 15:40:55 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\task\admin.py changed, reloading.
+2024-01-16 15:43:12 base.py[line:181] INFO Scheduler started
+2024-01-16 15:44:08 base.py[line:181] INFO Scheduler started
+2024-01-16 15:44:54 base.py[line:181] INFO Scheduler started
+2024-01-16 15:45:50 base.py[line:181] INFO Scheduler started
+2024-01-16 15:47:34 base.py[line:181] INFO Scheduler started
+2024-01-16 15:48:37 base.py[line:181] INFO Scheduler started
+2024-01-16 15:48:45 base.py[line:181] INFO Scheduler started
+2024-01-16 15:50:31 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\task\urls.py changed, reloading.
+2024-01-16 15:50:33 base.py[line:181] INFO Scheduler started
+2024-01-16 15:53:15 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\admin.py changed, reloading.
+2024-01-16 15:53:18 base.py[line:181] INFO Scheduler started
+2024-01-16 15:54:09 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-16 15:54:10 base.py[line:181] INFO Scheduler started
+2024-01-16 15:55:18 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-16 15:55:20 base.py[line:181] INFO Scheduler started
+2024-01-16 15:56:57 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-16 15:56:59 base.py[line:181] INFO Scheduler started
+2024-01-16 15:57:17 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-16 15:57:19 base.py[line:181] INFO Scheduler started
+2024-01-16 15:58:37 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\admin.py changed, reloading.
+2024-01-16 15:58:39 base.py[line:181] INFO Scheduler started
+2024-01-16 15:59:05 log.py[line:224] ERROR Internal Server Error: /admin/bugtracker/bugtracker/
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'bugtracker.handle_id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\contrib\admin\options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\contrib\admin\sites.py", line 232, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\contrib\admin\options.py", line 1815, in changelist_view
+    'selection_note': _('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\query.py", line 262, in __len__
+    self._fetch_all()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1054, "Unknown column 'bugtracker.handle_id' in 'field list'")
+2024-01-16 15:59:10 log.py[line:224] ERROR Internal Server Error: /admin/bugtracker/bugtracker/
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'bugtracker.handle_id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\contrib\admin\options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\contrib\admin\sites.py", line 232, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\contrib\admin\options.py", line 1815, in changelist_view
+    'selection_note': _('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\query.py", line 262, in __len__
+    self._fetch_all()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1054, "Unknown column 'bugtracker.handle_id' in 'field list'")
+2024-01-16 15:59:45 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\admin.py changed, reloading.
+2024-01-16 15:59:48 base.py[line:181] INFO Scheduler started
+2024-01-16 16:02:31 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-16 16:02:33 base.py[line:181] INFO Scheduler started
+2024-01-16 16:04:01 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-16 16:04:03 base.py[line:181] INFO Scheduler started
+2024-01-16 16:04:37 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-16 16:04:38 base.py[line:181] INFO Scheduler started
+2024-01-16 16:05:06 log.py[line:224] ERROR Internal Server Error: /admin/bugtracker/bugtracker/add/
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'handle_id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\contrib\admin\options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\contrib\admin\sites.py", line 232, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\contrib\admin\options.py", line 1657, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\contrib\admin\options.py", line 1540, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\contrib\admin\options.py", line 1586, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\contrib\admin\options.py", line 1099, in save_model
+    obj.save()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\base.py", line 739, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\base.py", line 776, in save_base
+    updated = self._save_table(
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\base.py", line 881, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\base.py", line 919, in _do_insert
+    return manager._insert(
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1054, "Unknown column 'handle_id' in 'field list'")
+2024-01-16 16:07:03 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-16 16:13:20 base.py[line:181] INFO Scheduler started
+2024-01-16 16:13:33 base.py[line:181] INFO Scheduler started
+2024-01-16 16:13:37 base.py[line:181] INFO Scheduler started
+2024-01-16 16:15:20 base.py[line:181] INFO Scheduler started
+2024-01-16 16:15:37 base.py[line:181] INFO Scheduler started
+2024-01-16 16:15:48 base.py[line:181] INFO Scheduler started
+2024-01-16 16:16:31 base.py[line:181] INFO Scheduler started
+2024-01-16 16:19:39 base.py[line:181] INFO Scheduler started
+2024-01-16 16:19:43 log.py[line:224] WARNING Not Found: /
+2024-01-16 16:19:47 log.py[line:224] ERROR Internal Server Error: /admin/bugtracker/bugtracker/
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'bugtracker.handle_id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\contrib\admin\options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\contrib\admin\sites.py", line 232, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\contrib\admin\options.py", line 1815, in changelist_view
+    'selection_note': _('0 of %(cnt)s selected') % {'cnt': len(cl.result_list)},
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\query.py", line 262, in __len__
+    self._fetch_all()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\query.py", line 1324, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\query.py", line 51, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\models\sql\compiler.py", line 1175, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.venv\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1054, "Unknown column 'bugtracker.handle_id' in 'field list'")
+2024-01-16 16:20:17 base.py[line:181] INFO Scheduler started
+2024-01-16 16:20:24 base.py[line:181] INFO Scheduler started
+2024-01-16 16:20:42 base.py[line:181] INFO Scheduler started
+2024-01-16 16:20:50 base.py[line:181] INFO Scheduler started
+2024-01-16 16:20:56 base.py[line:181] INFO Scheduler started
+2024-01-16 16:21:37 base.py[line:181] INFO Scheduler started
+2024-01-16 16:21:41 base.py[line:181] INFO Scheduler started
+2024-01-16 16:22:04 base.py[line:181] INFO Scheduler started
+2024-01-16 16:22:13 base.py[line:181] INFO Scheduler started
+2024-01-16 16:22:44 base.py[line:181] INFO Scheduler started
+2024-01-16 16:22:49 base.py[line:181] INFO Scheduler started
+2024-01-16 16:24:32 base.py[line:181] INFO Scheduler started
+2024-01-16 16:24:37 base.py[line:181] INFO Scheduler started
+2024-01-16 16:24:41 base.py[line:181] INFO Scheduler started
+2024-01-16 16:27:46 base.py[line:181] INFO Scheduler started
+2024-01-17 10:35:54 base.py[line:181] INFO Scheduler started
+2024-01-17 10:36:01 base.py[line:181] INFO Scheduler started
+2024-01-17 10:38:36 base.py[line:181] INFO Scheduler started
+2024-01-17 10:39:43 base.py[line:181] INFO Scheduler started
+2024-01-17 10:40:37 base.py[line:181] INFO Scheduler started
+2024-01-17 10:40:41 base.py[line:181] INFO Scheduler started
+2024-01-17 10:41:33 base.py[line:181] INFO Scheduler started
+2024-01-17 10:41:38 base.py[line:181] INFO Scheduler started
+2024-01-17 10:41:41 base.py[line:181] INFO Scheduler started
+2024-01-17 10:42:13 base.py[line:181] INFO Scheduler started
+2024-01-17 10:42:18 base.py[line:181] INFO Scheduler started
+2024-01-17 10:42:22 base.py[line:181] INFO Scheduler started
+2024-01-17 10:42:25 base.py[line:181] INFO Scheduler started
+2024-01-17 10:42:32 base.py[line:181] INFO Scheduler started
+2024-01-17 10:45:11 base.py[line:181] INFO Scheduler started
+2024-01-17 10:45:21 base.py[line:181] INFO Scheduler started
+2024-01-17 10:45:27 base.py[line:181] INFO Scheduler started
+2024-01-17 10:46:13 base.py[line:181] INFO Scheduler started
+2024-01-17 10:46:17 base.py[line:181] INFO Scheduler started
+2024-01-17 10:46:21 base.py[line:181] INFO Scheduler started
+2024-01-17 10:49:18 base.py[line:181] INFO Scheduler started
+2024-01-17 10:49:21 base.py[line:181] INFO Scheduler started
+2024-01-17 10:53:26 base.py[line:181] INFO Scheduler started
+2024-01-17 10:53:34 base.py[line:181] INFO Scheduler started
+2024-01-17 10:53:59 base.py[line:181] INFO Scheduler started
+2024-01-17 10:54:13 base.py[line:181] INFO Scheduler started
+2024-01-17 10:55:21 base.py[line:181] INFO Scheduler started
+2024-01-17 10:55:24 base.py[line:181] INFO Scheduler started
+2024-01-17 10:55:37 base.py[line:181] INFO Scheduler started
+2024-01-17 11:03:48 base.py[line:181] INFO Scheduler started
+2024-01-17 11:03:52 base.py[line:181] INFO Scheduler started
+2024-01-17 11:04:31 base.py[line:181] INFO Scheduler started
+2024-01-17 11:04:34 base.py[line:181] INFO Scheduler started
+2024-01-17 11:05:01 base.py[line:181] INFO Scheduler started
+2024-01-17 11:05:05 log.py[line:224] WARNING Not Found: /
+2024-01-17 11:05:05 log.py[line:224] WARNING Not Found: /favicon.ico
+2024-01-17 11:05:35 base.py[line:181] INFO Scheduler started
+2024-01-17 11:05:38 base.py[line:181] INFO Scheduler started
+2024-01-17 11:06:44 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-17 11:07:38 base.py[line:181] INFO Scheduler started
+2024-01-17 11:08:26 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-17 11:09:28 base.py[line:181] INFO Scheduler started
+2024-01-17 11:10:56 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-17 11:10:57 base.py[line:181] INFO Scheduler started
+2024-01-17 11:13:20 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-17 11:14:30 base.py[line:181] INFO Scheduler started
+2024-01-17 11:14:53 log.py[line:224] ERROR Internal Server Error: /admin/bugtracker/bugtracker/add/
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1054, "Unknown column 'module_id' in 'field list'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\contrib\admin\options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\contrib\admin\sites.py", line 232, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\contrib\admin\options.py", line 1657, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\contrib\admin\options.py", line 1540, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\contrib\admin\options.py", line 1586, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\contrib\admin\options.py", line 1099, in save_model
+    obj.save()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\db\models\base.py", line 739, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\db\models\base.py", line 776, in save_base
+    updated = self._save_table(
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\db\models\base.py", line 881, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\db\models\base.py", line 919, in _do_insert
+    return manager._insert(
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\db\models\query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\db\models\sql\compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\db\backends\utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\db\backends\utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\db\backends\utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\db\utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\db\backends\utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\db\backends\mysql\base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\pymysql\cursors.py", line 153, in execute
+    result = self._query(query)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\pymysql\cursors.py", line 322, in _query
+    conn.query(q)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\pymysql\connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\pymysql\connections.py", line 822, in _read_query_result
+    result.read()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\pymysql\connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\pymysql\connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\pymysql\protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\pymysql\err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.OperationalError: (1054, "Unknown column 'module_id' in 'field list'")
+2024-01-17 11:17:12 base.py[line:181] INFO Scheduler started
+2024-01-17 11:17:16 base.py[line:181] INFO Scheduler started
+2024-01-17 11:17:23 base.py[line:181] INFO Scheduler started
+2024-01-17 11:17:28 base.py[line:181] INFO Scheduler started
+2024-01-17 11:17:34 log.py[line:224] ERROR Internal Server Error: /admin/bugtracker/bugtracker/add/
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\contrib\admin\options.py", line 616, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\views\decorators\cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\contrib\admin\sites.py", line 232, in inner
+    return view(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\contrib\admin\options.py", line 1657, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\utils\decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\utils\decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\contrib\admin\options.py", line 1540, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\contrib\admin\options.py", line 1590, in _changeform_view
+    self.log_addition(request, new_object, change_message)
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\django\contrib\admin\options.py", line 815, in log_addition
+    object_repr=str(object),
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py", line 42, in __str__
+    return "{}".format(self.name)
+AttributeError: 'Bugtracker' object has no attribute 'name'
+2024-01-17 11:19:06 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-17 11:19:08 base.py[line:181] INFO Scheduler started
+2024-01-17 11:30:02 log.py[line:224] WARNING Not Found: /
+2024-01-17 11:47:37 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-17 12:25:05 base.py[line:181] INFO Scheduler started
+2024-01-17 12:27:18 base.py[line:181] INFO Scheduler started
+2024-01-17 12:27:40 base.py[line:181] INFO Scheduler started
+2024-01-17 12:27:45 base.py[line:181] INFO Scheduler started
+2024-01-17 12:27:53 base.py[line:181] INFO Scheduler started
+2024-01-17 12:27:58 base.py[line:181] INFO Scheduler started
+2024-01-17 12:28:04 base.py[line:181] INFO Scheduler started
+2024-01-17 12:58:19 log.py[line:224] WARNING Not Found: /CLodopfuncs.js
+2024-01-17 13:20:02 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-17 13:20:04 base.py[line:181] INFO Scheduler started
+2024-01-17 13:21:23 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-17 13:21:24 base.py[line:181] INFO Scheduler started
+2024-01-17 13:22:01 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-17 13:22:02 base.py[line:181] INFO Scheduler started
+2024-01-17 13:22:05 log.py[line:224] WARNING Not Found: /
+2024-01-17 16:09:14 base.py[line:181] INFO Scheduler started
+2024-01-17 16:09:16 log.py[line:224] WARNING Not Found: /
+2024-01-17 16:09:35 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\linerunner\settings.py changed, reloading.
+2024-01-17 16:09:37 base.py[line:181] INFO Scheduler started
+2024-01-17 16:10:05 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-17 16:10:06 base.py[line:181] INFO Scheduler started
+2024-01-17 16:13:14 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-17 16:13:16 base.py[line:181] INFO Scheduler started
+2024-01-17 16:13:26 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\admin.py changed, reloading.
+2024-01-17 16:13:27 base.py[line:181] INFO Scheduler started
+2024-01-17 16:38:39 base.py[line:181] INFO Scheduler started
+2024-01-17 16:38:48 base.py[line:181] INFO Scheduler started
+2024-01-17 16:40:17 base.py[line:181] INFO Scheduler started
+2024-01-17 16:40:58 base.py[line:181] INFO Scheduler started
+2024-01-17 16:41:02 base.py[line:181] INFO Scheduler started
+2024-01-17 16:41:38 base.py[line:181] INFO Scheduler started
+2024-01-17 16:41:49 base.py[line:181] INFO Scheduler started
+2024-01-17 16:41:54 base.py[line:181] INFO Scheduler started
+2024-01-17 16:42:02 base.py[line:181] INFO Scheduler started
+2024-01-17 16:45:52 base.py[line:181] INFO Scheduler started
+2024-01-17 16:45:58 base.py[line:181] INFO Scheduler started
+2024-01-17 16:46:17 base.py[line:181] INFO Scheduler started
+2024-01-17 16:46:43 base.py[line:181] INFO Scheduler started
+2024-01-17 16:46:48 base.py[line:181] INFO Scheduler started
+2024-01-17 16:46:52 base.py[line:181] INFO Scheduler started
+2024-01-17 16:47:06 base.py[line:181] INFO Scheduler started
+2024-01-17 16:47:08 log.py[line:224] WARNING Not Found: /
+2024-01-17 16:47:42 base.py[line:181] INFO Scheduler started
+2024-01-17 16:47:52 base.py[line:181] INFO Scheduler started
+2024-01-17 17:46:27 base.py[line:181] INFO Scheduler started
+2024-01-17 17:51:39 log.py[line:224] WARNING Not Found: /
+2024-01-17 17:51:45 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-17 17:52:59 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-17 17:53:02 log.py[line:224] WARNING Not Found: /accounts/login/
+2024-01-17 17:53:17 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-17 17:54:09 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\models.py changed, reloading.
+2024-01-17 17:54:11 base.py[line:181] INFO Scheduler started
+2024-01-17 17:54:13 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-17 17:54:49 base.py[line:181] INFO Scheduler started
+2024-01-17 17:54:53 base.py[line:181] INFO Scheduler started
+2024-01-17 17:54:58 base.py[line:181] INFO Scheduler started
+2024-01-17 17:55:03 base.py[line:181] INFO Scheduler started
+2024-01-17 17:55:07 log.py[line:224] WARNING Not Found: /admin/docs/
+2024-01-17 17:55:14 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-17 17:58:58 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-17 18:01:04 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-17 18:03:13 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\linerunner\urls.py changed, reloading.
+2024-01-17 18:04:01 base.py[line:181] INFO Scheduler started
+2024-01-17 18:11:35 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-17 18:12:35 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\urls.py changed, reloading.
+2024-01-17 18:12:37 base.py[line:181] INFO Scheduler started
+2024-01-17 18:12:40 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-17 18:14:10 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\__init__.py changed, reloading.
+2024-01-17 18:15:16 base.py[line:181] INFO Scheduler started
+2024-01-17 18:15:21 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-17 18:17:00 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\urls.py changed, reloading.
+2024-01-17 18:17:02 base.py[line:181] INFO Scheduler started
+2024-01-17 18:18:17 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\urls.py changed, reloading.
+2024-01-17 18:18:19 base.py[line:181] INFO Scheduler started
+2024-01-17 18:18:20 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-17 18:19:29 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\urls.py changed, reloading.
+2024-01-17 18:19:30 base.py[line:181] INFO Scheduler started
+2024-01-17 18:19:31 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-17 18:20:45 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\urls.py changed, reloading.
+2024-01-17 18:20:47 base.py[line:181] INFO Scheduler started
+2024-01-17 18:20:49 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-17 18:21:09 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\urls.py changed, reloading.
+2024-01-17 18:21:11 base.py[line:181] INFO Scheduler started
+2024-01-17 18:21:14 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-17 18:21:25 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\urls.py changed, reloading.
+2024-01-17 18:21:26 base.py[line:181] INFO Scheduler started
+2024-01-17 18:21:27 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-17 18:23:51 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\views.py changed, reloading.
+2024-01-17 18:23:53 base.py[line:181] INFO Scheduler started
+2024-01-17 18:23:56 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Documents\GitHub\linerunner-backend\.conda\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-17 18:24:25 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\bugtracker\views.py changed, reloading.
+2024-01-17 18:24:27 base.py[line:181] INFO Scheduler started
+2024-01-18 10:37:14 base.py[line:181] INFO Scheduler started
+2024-01-18 10:37:19 base.py[line:181] INFO Scheduler started
+2024-01-18 10:37:25 base.py[line:181] INFO Scheduler started
+2024-01-18 10:37:27 log.py[line:224] WARNING Not Found: /
+2024-01-18 10:37:27 log.py[line:224] WARNING Not Found: /favicon.ico
+2024-01-18 10:38:59 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\linerunner\urls.py changed, reloading.
+2024-01-18 10:39:01 base.py[line:181] INFO Scheduler started
+2024-01-18 10:39:11 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\ProgramData\anaconda3\envs\linerunner-backend\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-18 10:39:18 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\ProgramData\anaconda3\envs\linerunner-backend\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-18 10:39:22 log.py[line:224] WARNING Not Found: /accounts/login/
+2024-01-18 10:39:25 base.py[line:44] WARNING view's CaseDumpView raised exception during schema generation; use `getattr(self, 'swagger_fake_view', False)` to detect and short-circuit this
+Traceback (most recent call last):
+  File "C:\ProgramData\anaconda3\envs\linerunner-backend\lib\site-packages\drf_yasg\inspectors\base.py", line 42, in call_view_method
+    return view_method()
+TypeError: get_queryset() missing 1 required positional argument: 'request'
+2024-01-18 10:44:26 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\urls.py changed, reloading.
+2024-01-18 10:44:28 base.py[line:181] INFO Scheduler started
+2024-01-18 10:49:50 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\apps.py changed, reloading.
+2024-01-18 10:49:52 base.py[line:181] INFO Scheduler started
+2024-01-18 10:51:00 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\apps.py changed, reloading.
+2024-01-18 10:53:53 base.py[line:181] INFO Scheduler started
+2024-01-18 10:54:46 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\models.py changed, reloading.
+2024-01-18 10:54:48 base.py[line:181] INFO Scheduler started
+2024-01-18 10:55:42 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\models.py changed, reloading.
+2024-01-18 10:55:45 base.py[line:181] INFO Scheduler started
+2024-01-18 10:58:58 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\models.py changed, reloading.
+2024-01-18 10:59:00 base.py[line:181] INFO Scheduler started
+2024-01-18 11:02:33 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\apps.py changed, reloading.
+2024-01-18 11:02:34 base.py[line:181] INFO Scheduler started
+2024-01-18 11:03:46 autoreload.py[line:251] INFO C:\Users\Administrator\Documents\GitHub\linerunner-backend\apps\chanDao\apps.py changed, reloading.
+2024-01-18 11:03:48 base.py[line:181] INFO Scheduler started
+2024-01-18 15:15:09 base.py[line:181] INFO Scheduler started
+2024-01-18 15:15:27 base.py[line:181] INFO Scheduler started

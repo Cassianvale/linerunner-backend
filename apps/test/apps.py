@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class TaskConfig(AppConfig):
+class TestConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'apps.task'
-    verbose_name = '任务'
+    name = 'apps.test'
+    verbose_name = '测试管理'

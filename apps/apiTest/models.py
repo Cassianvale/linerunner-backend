@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from ..user.models import BaseTable
+from ..project.models import Project, Host, Modular
 
 # 返回在此项目中处于活动状态的用户模型
 users = get_user_model()
@@ -20,48 +21,7 @@ REQUEST_TYPE = (
 )
 
 
-class Project(models.Model):
-    """
-    项目表
-    """
-    PROJECTTYPE = [
-        ['web', 'web'],
-        ['app', 'app']
-    ]
-    name = models.CharField(max_length=50, verbose_name='项目名称')
-    type = models.CharField(max_length=50, verbose_name='项目类型', choices=PROJECTTYPE)
-    # blank为存之前判断, null为存之后判断  提交可为空, 数据库可为空
-    description = models.CharField(max_length=1024, blank=True, null=True, verbose_name='描述')
-    create_user = models.ForeignKey(users, on_delete=models.SET_NULL, null=True, verbose_name='创建人')
-
-    class Meta:
-        db_table = 'project'
-        verbose_name = "项目表"
-        verbose_name_plural = verbose_name
-
-    def __str__(self):
-        return "{}".format(self.name)
-
-
-class Host(models.Model):
-    """
-    host域名
-    """
-    name = models.CharField(max_length=50, verbose_name='名称')
-    host = models.CharField(max_length=1024, verbose_name='Host地址')
-    description = models.CharField(max_length=1024, blank=True, null=True, verbose_name='描述')
-    project = models.ForeignKey(Project, on_delete=models.CASCADE, verbose_name='所属项目', related_name='host_list')
-
-    class Meta:
-        db_table = "host"
-        verbose_name = "host域名"
-        verbose_name_plural = verbose_name
-
-    def __str__(self):
-        return "{}".format(self.host)
-
-
-class Api(models.Model):
+class Api(BaseTable):
     """
     接口信息
     """
@@ -107,7 +67,7 @@ class Api(models.Model):
         return "{}".format(self.name)
 
 
-class ApiArgument(models.Model):
+class ApiArgument(BaseTable):
     """
     api的全局参数
     """

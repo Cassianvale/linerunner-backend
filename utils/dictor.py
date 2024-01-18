@@ -6,8 +6,10 @@ import json
 从字典中获取指定路径下的值。它的作用是根据给定的路径，从一个嵌套的字典或列表中获取对应的值
 
 """
+
+
 def dictor(data, path=None, default='', checknone=False, ignorecase=False, pathsep="."):
-    '''
+    """
     Usage:
     get a value from a Dictionary key
     > dictor(data, "employees.John Doe.first_name")
@@ -34,7 +36,7 @@ def dictor(data, path=None, default='', checknone=False, ignorecase=False, paths
 
     ignore letter casing when searching
     > dictor(data, "employees.Fred Flintstone", ignorecase=True)
-    '''
+    """
 
     if path is None or path == '':
         return data

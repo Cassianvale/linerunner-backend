@@ -7,8 +7,9 @@ import xlrd
 import json
 from rest_framework import status
 from .models import Project, Api, Host, ApiArgumentExtract, ApiArgument, RunApiRecord, Parameterization
-from .serializers import ProjectSerializer, HostSerializer, ApiSerializer, ApiArgumentExtractSerializer, \
+from .serializers import ApiSerializer, ApiArgumentExtractSerializer, \
     ApiArgumentSerializer, RunApiRecordSerializer, ParameterizationSerializer
+from ..project.serializers import ProjectSerializer, HostSerializer
 from .api_request import apiRequest
 from utils.apiResponse import ApiResponse
 from utils.pagination import CustomPagination
@@ -35,125 +36,19 @@ from .filters import ApiFilter
 from rest_framework.generics import GenericAPIView
 
 
-class DataCountView(APIView):
-    """
-    项目管理数据统计
-    """
-    permission_classes = [MyPermission]
-    authentication_classes = [CustomJSONWebTokenAuthentication]
-
-    def get(self, request):
-        # 基础数据"总项目数，总域名，总接口数，总用例数"
-        project_count = Project.objects.count()
-        host_count = Host.objects.count()
-        api_count = Api.objects.count()
-        case_count = Case.objects.count()
-        # 总自动化用例近5天编写情况
-        api_write_list = []
-        case_write_list = []
-        for day in range(5):
-            threeDayAgo = (datetime.datetime.now() - datetime.timedelta(days=day))
-            otherStyleTime = threeDayAgo.strftime("%Y-%m-%d")
-            # api近5日编写统计情况
-            api_counts = Api.objects.filter(create_time__contains=otherStyleTime).count()
-            api_write_list.append({"time": otherStyleTime, "api_count": api_counts})
-            # case近5日编写统计情况
-            case_counts = Case.objects.filter(create_time__contains=otherStyleTime).count()
-            case_write_list.append({"time": otherStyleTime, "case_count": case_counts})
-        count_all = {"project_count": project_count,
-                     "host_count": host_count,
-                     "api_count": api_count,
-                     "case_count": case_count,
-                     "api_write_list": api_write_list,
-                     "case_write_list": case_write_list
-                     }
-        return ApiResponse(results=count_all)
-
-
-class ProjectViewsets(ModelViewSet):
-    """
-        retrieve:
-            返回一个项目（查）
-        list:
-            返回所有项目（查）
-        create:
-            创建项目（增）
-        delete:
-            删除项目（删）
-        partial_update:
-            更新现有组中的一个或多个字段（改：部分更改)
-        update:
-            更新项目（改）
-    """
-    queryset = Project.objects.all()
-    serializer_class = ProjectSerializer
-    pagination_class = CustomPagination
-    authentication_classes = [CustomJSONWebTokenAuthentication]
-    permission_classes = [MyPermission]
-
-    # 通过name模糊筛选
-    @action(methods=['get'], detail=False)
-    def query_name(self, request, *args, **kwargs):
-        project_name_type = Project.objects.filter(name__contains=self.request.query_params.get('name', '')).filter(
-            type__contains=self.request.query_params.get('type', ''))
-        ser = ProjectSerializer(project_name_type, many=True)
-        return ApiResponse(results=ser.data, status=status.HTTP_200_OK)
-
-
-class HostViewSets(ModelViewSet):
-    """
-        retrieve:
-            返回一个host（查）
-        list:
-            返回所有host（查）
-        create:
-            创建host（增）
-        delete:
-            删除host（删）
-        partial_update:
-            更新现有组中的一个或多个字段（改：部分更改)
-        update:
-            更新host（改）
-    """
-    queryset = Host.objects.all()
-    serializer_class = HostSerializer
-    pagination_class = CustomPagination
-    permission_classes = [MyPermission]
-    authentication_classes = [CustomJSONWebTokenAuthentication]
-
-    # 通过name筛选
-    @action(methods=['get'], detail=False)
-    def query_name(self, request, *args, **kwargs):
-        host_name = Host.objects.filter(name__contains=self.request.query_params.get("name"))
-        ser = HostSerializer(host_name, many=True)
-        return ApiResponse(results=ser.data)
-
-
 class ApiViewsets(APIModelViewSet):
-    """
-        retrieve:
-            返回一个api（查）
-        list:
-            返回所有api（查）
-        create:
-            创建api（增）
-        delete:
-            删除api（删）
-        partial_update:
-            更新现有组中的一个或多个字段（改：部分更改)
-        update:
-            更新api（改）
-    """
+
     queryset = Api.objects.all()
     serializer_class = ApiSerializer
     pagination_class = CustomPagination
     permission_classes = [MyPermission]
     authentication_classes = [CustomJSONWebTokenAuthentication]
-    # def get_queryset(self):
-    #     try:
-    #         return self.queryset.filter(path__contains=self.request.query_params.get('path', '')).filter(project_id=self.request.query_params.get('project_id'))
-    #     except Exception as e:
-    #         return self.queryset.filter(path__contains=self.kwargs.get('path'))
+
+    def get_queryset(self):
+        try:
+            return self.queryset.filter(path__contains=self.request.query_params.get('path', '')).filter(project_id=self.request.query_params.get('project_id'))
+        except Exception as e:
+            return self.queryset.filter(path__contains=self.kwargs.get('path'))
 
 
 class RunApiRecordAPIView(APIView):

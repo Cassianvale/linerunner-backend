@@ -54,7 +54,6 @@ class APIModelViewSet(ModelViewSet):
             return ApiResponse(results=serializer.data, msg='更新成功')
         raise ValidationError(serializer.errors)
 
-
     def destroy(self, request, *args, **kwargs):
         instance = self.get_object()
         self.perform_destroy(instance)

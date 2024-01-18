@@ -1,7 +1,7 @@
 from django.apps import AppConfig
 
 
-class TaskConfig(AppConfig):
+class ProjectConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'apps.task'
-    verbose_name = '任务'
+    name = 'apps.project'
+    verbose_name = '项目管理'
